@@ -63,7 +63,8 @@ Resumo de [docs/03-arquitetura.md](docs/03-arquitetura.md):
 
 - Nunca trabalhe em `master`. Crie um branch antes de qualquer mudança.
 - Quando o trabalho do branch estiver pronto, faça o commit, faça o merge
-  direto em `master` e apague o branch. Este projeto não usa pull requests.
+  direto em `master`, faça o push de `master` e apague o branch. Este projeto
+  não usa pull requests.
 - Não edite a pasta `.godot/` nem os arquivos `.import`. O Godot os gera.
 - Fases são dados: cada fase é um `.tscn`. Não monte fases por código.
 - Leia entradas por ações (`move_left`, `move_right`, `jump`), nunca por

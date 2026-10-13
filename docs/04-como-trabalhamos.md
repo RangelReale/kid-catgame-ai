@@ -66,7 +66,7 @@ Esta parte começa no último marco do [roteiro](05-roteiro.md).
 - Nunca trabalhe no branch `master`. Cada sessão usa um branch próprio.
 - Faça um commit sempre que o jogo estiver funcionando e ela gostar do
   resultado. Isso permite voltar a uma versão boa.
-- No fim da sessão, faça o merge do branch direto em `master` e apague o
-  branch. O projeto não usa pull requests.
+- No fim da sessão, faça o merge do branch direto em `master`, faça o push de
+  `master` e apague o branch. O projeto não usa pull requests.
 - Anote as ideias dela na lista do [roteiro](05-roteiro.md), mesmo as que
   ficam para depois.
