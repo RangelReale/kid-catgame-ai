@@ -58,12 +58,20 @@ Input Map do projeto:
 
 | Ação | Teclado | Controle | Android |
 | --- | --- | --- | --- |
-| `move_left` | Seta esquerda, A | Direcional | Botão na tela |
-| `move_right` | Seta direita, D | Direcional | Botão na tela |
-| `jump` | Espaço, seta para cima | Botão A | Botão na tela |
+| `move_left` | Seta esquerda, A | Direcional e analógico esquerdo | Botão na tela |
+| `move_right` | Seta direita, D | Direcional e analógico esquerdo | Botão na tela |
+| `jump` | Espaço, seta para cima | Botão de baixo (`JOY_BUTTON_A`) | Botão na tela |
 
 No Android, os botões são nós `TouchScreenButton` grandes, nos cantos de
 baixo da tela. Eles ficam escondidos no computador.
+
+Os botões de toque aparecem só quando não há controle conectado. O `HUD`
+consulta `Input.get_connected_joypads()` ao iniciar e escuta o sinal
+`Input.joy_connection_changed`.
+
+O Retroid Pocket 3+ usa as mesmas ações do controle no computador. O Android
+apresenta os botões dele como um controle sempre conectado. Por isso os
+botões de toque não aparecem nele.
 
 ## Tela
 

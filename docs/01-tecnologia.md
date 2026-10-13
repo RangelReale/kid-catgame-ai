@@ -5,6 +5,8 @@
 - Ser um jogo 2D de plataforma lateral (side-scroller): o personagem anda e
   pula, e a tela acompanha.
 - Rodar em Windows, Android e Mac, nessa ordem de prioridade.
+- No Android, rodar em um celular e em um Retroid Pocket 3+, um videogame
+  portátil com Android 11 e botões físicos.
 - Ser simples o bastante para uma criança de 6 anos participar.
 - Ter todos os arquivos em formato de texto, para o Claude ler e editar.
 

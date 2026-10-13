@@ -131,3 +131,15 @@ Por isso a versão final para Mac deve ser exportada no Mac.
 3. Confirme que o computador vê o celular: `adb devices`.
 4. No editor do Godot, clique no botão **Remote Deploy** (ícone de celular,
    no canto superior direito). O jogo é instalado e aberto no celular.
+
+### Testar no Retroid Pocket 3+
+
+Siga os mesmos passos do celular. A predefinição de exportação "Android"
+precisa de duas coisas para o `.apk` instalar nele:
+
+- A arquitetura `arm64-v8a` marcada.
+- O campo **Min SDK** igual ou menor que 30, porque o aparelho usa
+  Android 11 (API 30).
+
+**Verificar:** se o jogo abre no aparelho. O Godot 4.7 ainda não foi testado
+no chip dele (Unisoc T618, GPU Mali-G52).
