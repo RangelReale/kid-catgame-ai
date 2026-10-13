@@ -22,6 +22,8 @@ winget install Git.Git
 
 ### 2. Godot
 
+Rode este comando em um PowerShell aberto **como administrador**:
+
 ```powershell
 winget install --id GodotEngine.GodotEngine --exact --version 4.7.2
 ```
@@ -39,20 +41,18 @@ A alternativa ao winget é baixar o `.zip` em
 ### 3. Godot no PATH
 
 O Claude roda o jogo pela linha de comando, então o comando `godot` precisa
-funcionar no terminal. Sem privilégios de administrador, o winget não cria o
-comando `godot`. Os executáveis ficam com o nome original.
+funcionar no terminal.
 
-Copie os dois executáveis para uma pasta fixa, com nomes curtos:
+Como administrador, o winget cria os comandos `godot` e `godot_console` em
+`%LOCALAPPDATA%\Microsoft\WinGet\Links` e adiciona essa pasta ao `PATH`. Os
+comandos são atalhos (links simbólicos) para os dois executáveis acima.
 
-```powershell
-$src = (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Filter 'GodotEngine.GodotEngine*').FullName
-New-Item -ItemType Directory -Force C:\Tools\Godot
-Copy-Item "$src\Godot_v4.7.2-stable_win64.exe" C:\Tools\Godot\godot.exe
-Copy-Item "$src\Godot_v4.7.2-stable_win64_console.exe" C:\Tools\Godot\godot_console.exe
-```
+Sem privilégios de administrador, o winget não consegue criar os atalhos, e
+os comandos não existem. Nesse caso, desinstale com
+`winget uninstall --id GodotEngine.GodotEngine --exact` e instale de novo como
+administrador.
 
-Adicione `C:\Tools\Godot` à variável de ambiente `PATH` do usuário. Abra um
-terminal novo e teste:
+Abra um terminal novo e teste:
 
 ```powershell
 godot_console --version
@@ -64,8 +64,6 @@ No Windows, o comando `godot` não escreve no terminal e não espera o Godot
 terminar. Use `godot` para abrir o editor ou o jogo. Use `godot_console`, com
 os mesmos argumentos, quando a saída importa: `--version`, `--headless`,
 `--import` e `--export-*`.
-
-Ao atualizar o Godot pelo winget, repita a cópia.
 
 ### 4. Claude Code
 
