@@ -1,3 +1,8 @@
-[gd_scene format=3]
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_01.tscn" id="2_level"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_main")
+first_level = ExtResource("2_level")
