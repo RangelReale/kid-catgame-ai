@@ -1,0 +1,94 @@
+# Arquitetura
+
+Este documento descreve como o projeto será organizado. Nada disso existe
+ainda. A estrutura será criada aos poucos, seguindo o [roteiro](05-roteiro.md).
+
+## Conceitos do Godot
+
+- **Nó (node):** uma peça do jogo, como uma imagem, um som ou um corpo com
+  física.
+- **Cena (scene):** um conjunto de nós salvo em um arquivo `.tscn`. O gato é
+  uma cena. Uma fase é uma cena. Uma cena pode conter outras cenas.
+- **Script:** um arquivo `.gd` com o comportamento de um nó.
+
+## Pastas
+
+```
+project.godot        configuração do projeto
+scenes/
+  player/            o gato
+  levels/            uma cena por fase
+  objects/           peças reutilizáveis: coletável, plataforma, chegada
+  ui/                telas e botões
+assets/
+  sprites/           imagens
+  sounds/            efeitos sonoros
+  music/             músicas
+  fonts/             fontes
+docs/                estes documentos
+build/               jogos exportados (fora do Git)
+```
+
+Cada script fica ao lado da cena que o usa, com o mesmo nome:
+`scenes/player/player.tscn` e `scenes/player/player.gd`.
+
+## Nomes
+
+- Arquivos e pastas: inglês, minúsculas, com `_` (`level_01.tscn`).
+- Nós e classes: inglês, em `PascalCase` (`Player`, `FishPickup`).
+- Variáveis e funções: inglês, em `snake_case`, com tipos declarados.
+
+## Cenas principais
+
+| Cena | Nó raiz | Função |
+| --- | --- | --- |
+| `Main` | `Node` | Carrega a fase atual e troca de fase. |
+| `Player` | `CharacterBody2D` | O gato: anda, pula e cai com gravidade. |
+| `Level` | `Node2D` | Uma fase: chão e plataformas em um `TileMapLayer`, mais os objetos. |
+| `Pickup` | `Area2D` | Um coletável, como um peixe. |
+| `Goal` | `Area2D` | O ponto de chegada da fase. |
+| `HUD` | `CanvasLayer` | Contador de coletáveis e botões de toque. |
+
+A câmera (`Camera2D`) é um nó filho do `Player`, para a tela seguir o gato.
+
+## Entrada
+
+O código nunca lê teclas diretamente. Ele lê ações com nome, definidas no
+Input Map do projeto:
+
+| Ação | Teclado | Controle | Android |
+| --- | --- | --- | --- |
+| `move_left` | Seta esquerda, A | Direcional | Botão na tela |
+| `move_right` | Seta direita, D | Direcional | Botão na tela |
+| `jump` | Espaço, seta para cima | Botão A | Botão na tela |
+
+No Android, os botões são nós `TouchScreenButton` grandes, nos cantos de
+baixo da tela. Eles ficam escondidos no computador.
+
+## Tela
+
+O jogo tem uma resolução base fixa de 480x270 pontos, na proporção 16:9. O
+Godot estica essa imagem para o tamanho real da janela ou do celular, com o
+modo de esticamento `canvas_items` e o aspecto `expand`. Em telas mais largas
+que 16:9, o jogador vê um pouco mais da fase nas laterais.
+
+No Android, o jogo roda sempre deitado (paisagem).
+
+## Formas simples primeiro
+
+No começo, tudo é desenhado com retângulos coloridos. Em cada cena, a parte
+visual fica em um nó próprio chamado `Visual`, separado da colisão e do
+script. Para trocar o retângulo pelo desenho final, basta mudar esse nó. A
+lógica do jogo não muda.
+
+## Fases são dados
+
+Uma fase é um arquivo `.tscn`, não código. Isso permite dois jeitos de montar
+uma fase:
+
+- **Por voz:** a criança descreve a fase, e o Claude edita o arquivo.
+- **No editor:** a criança arrasta plataformas e objetos com o mouse.
+
+Regras do jogo, como a altura do pulo, ficam em variáveis exportadas
+(`@export`) no script. Assim elas aparecem no editor e mudam sem mexer no
+código.
