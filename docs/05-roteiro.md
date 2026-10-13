@@ -7,7 +7,7 @@ filha pode ver ou jogar.
 
 - [x] **1. Projeto vazio no Windows.** Um projeto Godot que abre no editor e
   mostra uma janela. Inclui `.gitignore` e `.gitattributes`.
-- [ ] **2. O gato anda e pula.** Um retângulo anda para os lados e pula sobre
+- [x] **2. O gato anda e pula.** Um retângulo anda para os lados e pula sobre
   um chão, com o teclado ou com um controle.
 - [ ] **3. A câmera segue o gato.** A fase é mais larga que a tela.
 - [ ] **4. Coletáveis e chegada.** O gato pega peixes, e a fase termina na

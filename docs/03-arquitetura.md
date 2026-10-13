@@ -2,9 +2,9 @@
 
 Este documento descreve como o projeto será organizado. A estrutura é criada
 aos poucos, seguindo o [roteiro](05-roteiro.md). Hoje existem o
-`project.godot`, com a tela e as ações de entrada descritas abaixo, e a cena
-`Main`, ainda vazia. As pastas aparecem quando o primeiro arquivo delas é
-criado.
+`project.godot`, com a tela e as ações de entrada descritas abaixo, e as cenas
+`Main`, `Player` e `Level01`. As pastas aparecem quando o primeiro arquivo
+delas é criado.
 
 ## Conceitos do Godot
 
@@ -54,6 +54,14 @@ Cada script fica ao lado da cena que o usa, com o mesmo nome:
 | `HUD` | `CanvasLayer` | Contador de coletáveis e botões de toque. |
 
 A câmera (`Camera2D`) é um nó filho do `Player`, para a tela seguir o gato.
+Ela chega no marco 3.
+
+Por enquanto, o chão da fase `level_01` é um único `StaticBody2D`, e não um
+`TileMapLayer`. A fase tem duas paredes invisíveis (`WallLeft` e `WallRight`)
+nas bordas, para o gato não sair dela.
+
+O `Player` tem a origem nos pés, no centro. A posição dele em uma fase é o
+ponto onde os pés tocam o chão.
 
 ## Entrada
 

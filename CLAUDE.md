@@ -3,10 +3,10 @@
 Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
 6 anos. Os detalhes estão em [docs/](docs/README.md).
 
-**Estado atual:** o marco 1 do [roteiro](docs/05-roteiro.md) está pronto. O
-projeto Godot existe e abre uma janela azul vazia, com as ações de entrada já
-definidas. Ainda não há gato nem fase. O próximo passo é o marco 2. Atualize
-esta seção a cada marco.
+**Estado atual:** o marco 2 do [roteiro](docs/05-roteiro.md) está pronto. O
+gato é um retângulo laranja com orelhas. Ele anda e pula sobre um chão verde,
+em uma fase do tamanho da tela. A câmera ainda não se move. O próximo passo é
+o marco 3. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
 
