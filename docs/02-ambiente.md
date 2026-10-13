@@ -3,8 +3,12 @@
 Este documento lista o que instalar para trabalhar no jogo. O Windows é o
 caminho padrão. O Mac é a alternativa.
 
-Nada aqui foi instalado ainda. Alguns itens estão marcados com **Verificar**:
-confirme esses itens na primeira instalação e corrija este documento.
+No Windows, o Git, o Godot 4.7.2 e o Claude Code já estão instalados. O
+Android e os modelos de exportação ainda não foram configurados. No Mac, o
+Godot ainda não foi instalado.
+
+Alguns itens estão marcados com **Verificar**: confirme esses itens na
+primeira instalação e corrija este documento.
 
 ## Windows (caminho padrão)
 
@@ -19,25 +23,49 @@ winget install Git.Git
 ### 2. Godot
 
 ```powershell
-winget install GodotEngine.GodotEngine
+winget install --id GodotEngine.GodotEngine --exact --version 4.7.2
 ```
 
-**Verificar:** o identificador do pacote e a versão instalada (precisa ser
-4.7.x). A alternativa é baixar o `.exe` em <https://godotengine.org/download>.
-O Godot para Windows é um único executável, sem instalador.
+O Godot para Windows não tem instalador. O winget extrai dois executáveis em
+`%LOCALAPPDATA%\Microsoft\WinGet\Packages\GodotEngine.GodotEngine_...`:
+
+- `Godot_v4.7.2-stable_win64.exe`: o editor e o jogo.
+- `Godot_v4.7.2-stable_win64_console.exe`: abre o primeiro e mostra a saída
+  dele no terminal.
+
+A alternativa ao winget é baixar o `.zip` em
+<https://godotengine.org/download>.
 
 ### 3. Godot no PATH
 
 O Claude roda o jogo pela linha de comando, então o comando `godot` precisa
-funcionar no terminal. Abra um terminal novo e teste:
+funcionar no terminal. Sem privilégios de administrador, o winget não cria o
+comando `godot`. Os executáveis ficam com o nome original.
+
+Copie os dois executáveis para uma pasta fixa, com nomes curtos:
 
 ```powershell
-godot --version
+$src = (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Filter 'GodotEngine.GodotEngine*').FullName
+New-Item -ItemType Directory -Force C:\Tools\Godot
+Copy-Item "$src\Godot_v4.7.2-stable_win64.exe" C:\Tools\Godot\godot.exe
+Copy-Item "$src\Godot_v4.7.2-stable_win64_console.exe" C:\Tools\Godot\godot_console.exe
 ```
 
-Se o comando não existir, renomeie o executável baixado para `godot.exe`,
-coloque-o em uma pasta fixa (por exemplo `C:\Tools\Godot`) e adicione essa
-pasta à variável de ambiente `PATH`.
+Adicione `C:\Tools\Godot` à variável de ambiente `PATH` do usuário. Abra um
+terminal novo e teste:
+
+```powershell
+godot_console --version
+```
+
+O resultado esperado começa com `4.7.2.stable`.
+
+No Windows, o comando `godot` não escreve no terminal e não espera o Godot
+terminar. Use `godot` para abrir o editor ou o jogo. Use `godot_console`, com
+os mesmos argumentos, quando a saída importa: `--version`, `--headless`,
+`--import` e `--export-*`.
+
+Ao atualizar o Godot pelo winget, repita a cópia.
 
 ### 4. Claude Code
 
@@ -50,31 +78,38 @@ clone o repositório e rode `claude` dentro da pasta.
 
 ### 5. Android (necessário só a partir do marco 6 do roteiro)
 
-1. Instale o JDK (kit de desenvolvimento Java):
-   `winget install EclipseAdoptium.Temurin.17.JDK`.
-   **Verificar:** a versão do Java que o Godot 4.7 exige. As versões 4.x
-   anteriores exigem o JDK 17.
-2. Baixe as "command line tools" do Android em
-   <https://developer.android.com/studio#command-line-tools-only> e extraia
-   em `C:\Android\cmdline-tools\latest`.
-3. Defina a variável de ambiente `ANDROID_HOME` como `C:\Android`.
-4. Instale os pacotes do SDK:
+O Windows atual já tem o SDK Android em `%LOCALAPPDATA%\Android\Sdk`, com
+`platform-tools`, `build-tools;35.0.0` e `platforms;android-35`, e a chave de
+depuração em `%USERPROFILE%\.android\debug.keystore`. Não instale um segundo
+SDK.
+
+Falta fazer:
+
+1. Defina a variável de ambiente `ANDROID_HOME` como
+   `%LOCALAPPDATA%\Android\Sdk`.
+2. Confirme o JDK (kit de desenvolvimento Java). O Windows atual tem o JDK 21
+   da Microsoft, e `JAVA_HOME` aponta para ele. **Verificar:** se o Godot 4.7
+   aceita o JDK 21. As versões 4.x anteriores exigem o JDK 17. Se ele exigir
+   o 17, instale com `winget install EclipseAdoptium.Temurin.17.JDK` e aponte
+   o Godot para esse JDK.
+3. **Verificar:** se as versões do SDK acima são as que a documentação do
+   Godot 4.7 pede. Para instalar outras:
 
    ```powershell
-   & "$env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat" "platform-tools" "build-tools;35.0.0" "platforms;android-35"
+   & "$env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat" "build-tools;35.0.0" "platforms;android-35"
    ```
 
-   **Verificar:** as versões que a documentação do Godot 4.7 pede.
-5. Crie a chave de depuração, se `%USERPROFILE%\.android\debug.keystore` não
-   existir:
+4. No Godot, abra **Editor > Editor Settings > Export > Android** e preencha
+   o caminho do Java, o caminho do SDK e o caminho da chave de depuração.
 
-   ```powershell
-   keytool -genkeypair -keyalg RSA -alias androiddebugkey -keypass android -keystore "$env:USERPROFILE\.android\debug.keystore" -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
-   ```
+Em um computador Windows sem SDK, baixe as "command line tools" do Android em
+<https://developer.android.com/studio#command-line-tools-only>, extraia em
+`<pasta do SDK>\cmdline-tools\latest` e rode o comando do passo 3 com
+`"platform-tools"` a mais. Para criar a chave de depuração:
 
-6. No Godot, abra **Editor > Editor Settings > Export > Android** e preencha
-   o caminho do Java, o caminho do SDK (`C:\Android`) e o caminho da chave de
-   depuração.
+```powershell
+keytool -genkeypair -keyalg RSA -alias androiddebugkey -keypass android -keystore "$env:USERPROFILE\.android\debug.keystore" -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
+```
 
 ### Cuidados no Windows
 

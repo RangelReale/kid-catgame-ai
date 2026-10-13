@@ -38,6 +38,10 @@ erros de transcrição e sem detalhes.
 Os comandos são iguais no PowerShell (Windows) e no zsh (Mac), desde que
 `godot` esteja no `PATH`. Rode a partir da raiz do repositório.
 
+No Windows, `godot` não escreve no terminal e não espera o Godot terminar.
+Nos comandos com `--headless`, e sempre que a saída importa, use
+`godot_console` no lugar de `godot`, com os mesmos argumentos.
+
 | Tarefa | Comando |
 | --- | --- |
 | Abrir o editor | `godot -e --path .` |
