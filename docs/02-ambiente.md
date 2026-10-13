@@ -113,8 +113,8 @@ keytool -genkeypair -keyalg RSA -alias androiddebugkey -keypass android -keystor
 
 - Os caminhos usam `\`. Dentro do Godot, os caminhos do projeto sempre usam
   `res://` e `/`, em qualquer sistema.
-- O Git pode trocar os finais de linha dos arquivos. Um arquivo
-  `.gitattributes` vai fixar isso no marco 1 do roteiro.
+- O Git pode trocar os finais de linha dos arquivos. O arquivo
+  `.gitattributes` fixa o final de linha em LF nos dois sistemas.
 
 ## Mac (alternativa)
 

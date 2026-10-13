@@ -1,7 +1,10 @@
 # Arquitetura
 
-Este documento descreve como o projeto será organizado. Nada disso existe
-ainda. A estrutura será criada aos poucos, seguindo o [roteiro](05-roteiro.md).
+Este documento descreve como o projeto será organizado. A estrutura é criada
+aos poucos, seguindo o [roteiro](05-roteiro.md). Hoje existem o
+`project.godot`, com a tela e as ações de entrada descritas abaixo, e a cena
+`Main`, ainda vazia. As pastas aparecem quando o primeiro arquivo delas é
+criado.
 
 ## Conceitos do Godot
 
@@ -16,6 +19,7 @@ ainda. A estrutura será criada aos poucos, seguindo o [roteiro](05-roteiro.md).
 ```
 project.godot        configuração do projeto
 scenes/
+  main.tscn          a cena que o jogo abre primeiro
   player/            o gato
   levels/            uma cena por fase
   objects/           peças reutilizáveis: coletável, plataforma, chegada
@@ -79,6 +83,9 @@ O jogo tem uma resolução base fixa de 480x270 pontos, na proporção 16:9. O
 Godot estica essa imagem para o tamanho real da janela ou do celular, com o
 modo de esticamento `canvas_items` e o aspecto `expand`. Em telas mais largas
 que 16:9, o jogador vê um pouco mais da fase nas laterais.
+
+No computador, a janela abre com 1280x720 pontos. O fundo é azul-claro, a cor
+do céu.
 
 No Android, o jogo roda sempre deitado (paisagem).
 

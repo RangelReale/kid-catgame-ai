@@ -5,7 +5,7 @@ filha pode ver ou jogar.
 
 ## Marcos
 
-- [ ] **1. Projeto vazio no Windows.** Um projeto Godot que abre no editor e
+- [x] **1. Projeto vazio no Windows.** Um projeto Godot que abre no editor e
   mostra uma janela. Inclui `.gitignore` e `.gitattributes`.
 - [ ] **2. O gato anda e pula.** Um retângulo anda para os lados e pula sobre
   um chão, com o teclado ou com um controle.

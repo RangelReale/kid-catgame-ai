@@ -3,9 +3,10 @@
 Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
 6 anos. Os detalhes estão em [docs/](docs/README.md).
 
-**Estado atual:** só existem documentos. O projeto Godot ainda não foi criado.
-O próximo passo é o marco 1 do [roteiro](docs/05-roteiro.md). Atualize esta
-seção e os comandos abaixo quando o projeto existir.
+**Estado atual:** o marco 1 do [roteiro](docs/05-roteiro.md) está pronto. O
+projeto Godot existe e abre uma janela azul vazia, com as ações de entrada já
+definidas. Ainda não há gato nem fase. O próximo passo é o marco 2. Atualize
+esta seção a cada marco.
 
 ## Quem pede as mudanças
 
@@ -52,7 +53,12 @@ Nos comandos com `--headless`, e sempre que a saída importa, use
 | Exportar para Mac | `godot --headless --path . --export-release "macOS" build/macos/catgame.zip` |
 
 Os nomes entre aspas são os nomes das predefinições em `export_presets.cfg`.
-A pasta de destino precisa existir antes da exportação.
+Esse arquivo ainda não existe: ele nasce no marco 5, e até lá os comandos de
+exportação não funcionam. A pasta de destino precisa existir antes da
+exportação.
+
+Para confirmar que o jogo abre sem erros, rode-o por alguns quadros e leia a
+saída: `godot --path . --quit-after 120` (no Windows, com `godot_console`).
 
 ## Organização
 
