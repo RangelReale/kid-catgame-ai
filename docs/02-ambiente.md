@@ -3,9 +3,8 @@
 Este documento lista o que instalar para trabalhar no jogo. O Windows é o
 caminho padrão. O Mac é a alternativa.
 
-No Windows, o Git, o Godot 4.7.2 e o Claude Code já estão instalados. O
-Android e os modelos de exportação ainda não foram configurados. No Mac, o
-Godot ainda não foi instalado.
+No Windows, o Git, o Godot 4.7.2, o Claude Code, o SDK Android e os modelos
+de exportação já estão instalados. No Mac, o Godot ainda não foi instalado.
 
 Alguns itens estão marcados com **Verificar**: confirme esses itens na
 primeira instalação e corrija este documento.
@@ -86,10 +85,8 @@ Falta fazer:
 1. Defina a variável de ambiente `ANDROID_HOME` como
    `%LOCALAPPDATA%\Android\Sdk`.
 2. Confirme o JDK (kit de desenvolvimento Java). O Windows atual tem o JDK 21
-   da Microsoft, e `JAVA_HOME` aponta para ele. **Verificar:** se o Godot 4.7
-   aceita o JDK 21. As versões 4.x anteriores exigem o JDK 17. Se ele exigir
-   o 17, instale com `winget install EclipseAdoptium.Temurin.17.JDK` e aponte
-   o Godot para esse JDK.
+   da Microsoft, e `JAVA_HOME` aponta para ele. O Godot 4.7.2 exporta e
+   assina o `.apk` com o JDK 21 sem erros.
 3. **Verificar:** se as versões do SDK acima são as que a documentação do
    Godot 4.7 pede. Para instalar outras:
 
@@ -146,6 +143,12 @@ Os modelos de exportação (export templates) são os arquivos que o Godot usa
 para gerar o jogo de cada plataforma. Baixe uma vez por computador, em
 **Editor > Manage Export Templates > Download and Install**.
 
+Sem o editor, baixe `Godot_v4.7.2-stable_export_templates.tpz` em
+<https://github.com/godotengine/godot-builds/releases>. O arquivo é um `.zip`.
+Copie o conteúdo da pasta `templates/` dele para
+`%APPDATA%\Godot\export_templates.7.2.stable\` (Windows) ou
+`~/Library/Application Support/Godot/export_templates/4.7.2.stable/` (Mac).
+
 ### Quem exporta o quê
 
 | Exportar para | No Windows | No Mac |
@@ -167,12 +170,33 @@ Por isso a versão final para Mac deve ser exportada no Mac.
 
 ### Testar no Retroid Pocket 3+
 
-Siga os mesmos passos do celular. A predefinição de exportação "Android"
-precisa de duas coisas para o `.apk` instalar nele:
+Siga os mesmos passos do celular. A predefinição "Android" em
+`export_presets.cfg` já marca a arquitetura `arm64-v8a`, a única do aparelho.
+A exportação sem Gradle usa o Min SDK do modelo, menor que 30 (Android 11, a
+versão do aparelho).
 
-- A arquitetura `arm64-v8a` marcada.
-- O campo **Min SDK** igual ou menor que 30, porque o aparelho usa
-  Android 11 (API 30).
+O jogo abre no aparelho com o Godot 4.7.2 e o renderizador Compatibility
+(OpenGL ES 3.2 na GPU Mali-G52).
 
-**Verificar:** se o jogo abre no aparelho. O Godot 4.7 ainda não foi testado
-no chip dele (Unisoc T618, GPU Mali-G52).
+Não ligue a **Depuração por Wi-Fi** nas Opções do desenvolvedor: o aparelho
+reinicia sozinho ao abrir essa tela. Para usar o adb sem cabo, ligue o cabo
+uma vez e rode:
+
+```powershell
+adb tcpip 5555
+adb connect <IP do aparelho>:5555
+```
+
+O IP aparece em **Configurações > Wi-Fi**, ou com
+`adb shell ip -f inet addr show wlan0`. O modo sem fio acaba quando o aparelho
+reinicia.
+
+Para instalar e abrir o jogo pela linha de comando:
+
+```powershell
+adb install -r build/android/catgame.apk
+adb shell monkey -p com.rangelreale.catgame -c android.intent.category.LAUNCHER 1
+```
+
+No Windows, o `adb` fica em `%LOCALAPPDATA%\Android\Sdk\platform-tools`,
+fora do `PATH`.
