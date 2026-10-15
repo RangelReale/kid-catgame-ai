@@ -5,7 +5,8 @@ Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
 
 **Estado atual:** o marco 3 do [roteiro](docs/05-roteiro.md) está pronto. O
 gato tem corpo arco-íris, patas, rabo e cabeça cor-de-rosa com orelhas, olho
-e boca. Ele anda e pula, com cambalhota, sobre um chão verde. A fase tem
+e boca, e asas. Ele anda e pula, com cambalhota, sobre um chão verde. No
+ar, bate as asas para subir mais, até três vezes antes de pousar. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. O próximo passo são os monstrinhos (veja "Ideias da
 filha") e depois o marco 4. Atualize esta seção a cada marco.

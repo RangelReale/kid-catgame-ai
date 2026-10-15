@@ -33,6 +33,8 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-15: gato com corpo arco-íris.
 - [x] 2026-10-15: gato com cabeça separada do corpo.
 - [x] 2026-10-15: fase maior.
+- [x] 2026-10-15: gato com poderes e asas, que voa três vezes de cada vez.
+  Entrou como três pulos extras no ar, batendo as asas.
 - [ ] 2026-10-15: monstrinhos no meio da fase. Ela pediu "monstrinhos pra
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.

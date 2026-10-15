@@ -6,6 +6,10 @@ extends CharacterBody2D
 @export var jump_speed: float = 300.0
 ## Downward acceleration, in pixels per second squared.
 @export var gravity: float = 900.0
+## Extra jumps the cat can do in the air with its wings, before landing.
+@export var air_jumps: int = 3
+## Upward speed at the start of each wing flap, in pixels per second.
+@export var flap_speed: float = 250.0
 ## Time the somersault takes during a jump, in seconds.
 @export var flip_duration: float = 0.5
 
@@ -14,17 +18,25 @@ const FLIP_PIVOT := Vector2(0, -8)
 
 ## Seconds since the somersault started; negative when not flipping.
 var _flip_time: float = -1.0
+## Wing flaps left before the cat touches the floor again.
+var _air_jumps_left: int = 0
 
 @onready var _visual: Node2D = $Visual
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if is_on_floor():
+		_air_jumps_left = air_jumps
+	else:
 		velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_speed
-		_flip_time = 0.0
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = -jump_speed
+			_flip_time = 0.0
+		elif _air_jumps_left > 0:
+			velocity.y = -flap_speed
+			_air_jumps_left -= 1
 
 	velocity.x = Input.get_axis("move_left", "move_right") * speed
 
