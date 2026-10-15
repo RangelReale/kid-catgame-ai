@@ -4,7 +4,7 @@ Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
 6 anos. Os detalhes estão em [docs/](docs/README.md).
 
 **Estado atual:** o marco 2 do [roteiro](docs/05-roteiro.md) está pronto. O
-gato é um retângulo cor-de-rosa com orelhas, patas, rabo, olho e boca. Ele anda e pula sobre um chão verde,
+gato é um retângulo cor-de-rosa com orelhas, patas, rabo, olho e boca. Ele anda e pula, com cambalhota, sobre um chão verde,
 em uma fase do tamanho da tela. A câmera ainda não se move. O próximo passo é
 o marco 3. Atualize esta seção a cada marco.
 
