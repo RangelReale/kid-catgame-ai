@@ -1,24 +1,64 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
-size = Vector2(880, 32)
+size = Vector2(2400, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(16, 1200)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_box"]
+size = Vector2(48, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_platform"]
+size = Vector2(80, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_step"]
+size = Vector2(64, 28)
+
 [node name="Level01" type="Node2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(240, 254)
+position = Vector2(960, 254)
 
 [node name="Visual" type="Polygon2D" parent="Floor"]
 color = Color(0.36, 0.7, 0.33, 1)
-polygon = PackedVector2Array(-440, -16, 440, -16, 440, 400, -440, 400)
+polygon = PackedVector2Array(-1200, -16, 1200, -16, 1200, 400, -1200, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_floor")
+
+[node name="Box" type="StaticBody2D" parent="."]
+position = Vector2(560, 226)
+
+[node name="Visual" type="Polygon2D" parent="Box"]
+color = Color(0.6, 0.4, 0.25, 1)
+polygon = PackedVector2Array(-24, -12, 24, -12, 24, 12, -24, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_box")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(960, 204)
+
+[node name="Visual" type="Polygon2D" parent="Platform"]
+color = Color(0.6, 0.4, 0.25, 1)
+polygon = PackedVector2Array(-40, -4, 40, -4, 40, 4, -40, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource("RectangleShape2D_platform")
+one_way_collision = true
+
+[node name="Step" type="StaticBody2D" parent="."]
+position = Vector2(1400, 224)
+
+[node name="Visual" type="Polygon2D" parent="Step"]
+color = Color(0.6, 0.4, 0.25, 1)
+polygon = PackedVector2Array(-32, -14, 32, -14, 32, 14, -32, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step"]
+shape = SubResource("RectangleShape2D_step")
 
 [node name="WallLeft" type="StaticBody2D" parent="."]
 position = Vector2(-8, 0)
@@ -27,10 +67,16 @@ position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_wall")
 
 [node name="WallRight" type="StaticBody2D" parent="."]
-position = Vector2(488, 0)
+position = Vector2(1928, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
 shape = SubResource("RectangleShape2D_wall")
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(80, 238)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_right = 1920
+limit_bottom = 270
+position_smoothing_enabled = true

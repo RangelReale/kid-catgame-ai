@@ -54,7 +54,8 @@ Cada script fica ao lado da cena que o usa, com o mesmo nome:
 | `HUD` | `CanvasLayer` | Contador de coletáveis e botões de toque. |
 
 A câmera (`Camera2D`) é um nó filho do `Player`, para a tela seguir o gato.
-Ela chega no marco 3.
+Ela fica na cena da fase, e não em `player.tscn`, porque os limites da câmera
+dependem do tamanho de cada fase.
 
 Por enquanto, o chão da fase `level_01` é um único `StaticBody2D`, e não um
 `TileMapLayer`. A fase tem duas paredes invisíveis (`WallLeft` e `WallRight`)
