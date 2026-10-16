@@ -14,7 +14,9 @@ câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três 
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
 um monstrinho de lado não faz nada. Há duas fases. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
-pronto). Do marco 4, falta o peixe para pegar. A filha pediu 20 fases. Atualize esta seção a cada marco.
+pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
+controle, três botões redondos nos cantos de baixo fazem o gato andar e
+pular (início do marco 6). A filha pediu 20 fases. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
 
@@ -55,6 +57,7 @@ Nos comandos com `--headless`, e sempre que a saída importa, use
 | --- | --- |
 | Abrir o editor | `godot -e --path .` |
 | Rodar o jogo | `godot --path .` |
+| Rodar com os botões de toque | `godot --path . -- --touch` |
 | Importar recursos sem abrir o editor | `godot --headless --path . --import` |
 | Exportar para Windows | `godot --headless --path . --export-release "Windows Desktop" build/windows/catgame.exe` |
 | Exportar para Android | `godot --headless --path . --export-debug "Android" build/android/catgame.apk` |

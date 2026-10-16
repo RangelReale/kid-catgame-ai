@@ -14,7 +14,8 @@ filha pode ver ou jogar.
   chegada.
 - [ ] **5. Jogo para Windows.** Um `.exe` que roda fora do editor.
 - [ ] **6. Jogo para Android.** Um `.apk` no celular, com botões na tela, e
-  no Retroid Pocket 3+, com os botões do aparelho.
+  no Retroid Pocket 3+, com os botões do aparelho. Os botões na tela já
+  existem. Falta exportar e testar no celular.
 - [ ] **7. Projeto no Mac.** O projeto abre no Mac e exporta um `.app`.
 - [x] **8. Segunda fase.** O jogo passa de uma fase para a outra.
 - [ ] **9. Arte e sons da filha.** Os desenhos e sons dela substituem os

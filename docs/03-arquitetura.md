@@ -82,11 +82,18 @@ Input Map do projeto:
 | `jump` | Espaço, seta para cima | Botão de baixo (`JOY_BUTTON_A`) | Botão na tela |
 
 No Android, os botões são nós `TouchScreenButton` grandes, nos cantos de
-baixo da tela. Eles ficam escondidos no computador.
+baixo da tela. Eles ficam em `scenes/hud/hud.tscn`, e a cena `Main` tem uma
+instância dela. Cada botão dispara a ação do seu campo `action`. Os botões
+de andar usam `passby_press`, para o dedo deslizar de um para o outro.
 
-Os botões de toque aparecem só quando não há controle conectado. O `HUD`
-consulta `Input.get_connected_joypads()` ao iniciar e escuta o sinal
+Os botões de toque aparecem só quando há tela de toque
+(`DisplayServer.is_touchscreen_available()`) e nenhum controle conectado. O
+`HUD` consulta `Input.get_connected_joypads()` ao iniciar e escuta o sinal
 `Input.joy_connection_changed`.
+
+No computador, os botões ficam escondidos. Para testá-los com o mouse, rode
+`godot --path . -- --touch`. Esse argumento liga
+`Input.emulate_touch_from_mouse` e mostra os botões.
 
 O Retroid Pocket 3+ usa as mesmas ações do controle no computador. O Android
 apresenta os botões dele como um controle sempre conectado. Por isso os
