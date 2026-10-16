@@ -24,6 +24,7 @@ scenes/
   levels/            uma cena por fase
   sun/               o sol do céu, que fica parado na tela
   cloud/             uma nuvem do céu, que passa devagar pela tela
+  monster/           um monstrinho que anda; some em estrelinhas quando o gato pula nele
   objects/           peças reutilizáveis: coletável, plataforma, chegada
   ui/                telas e botões
 assets/

@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 ## Horizontal speed, in pixels per second.
@@ -10,6 +11,8 @@ extends CharacterBody2D
 @export var air_jumps: int = 3
 ## Upward speed at the start of each wing flap, in pixels per second.
 @export var flap_speed: float = 250.0
+## Upward speed after landing on a monster, in pixels per second.
+@export var bounce_speed: float = 220.0
 ## Time the somersault takes during a jump, in seconds.
 @export var flip_duration: float = 0.5
 
@@ -42,6 +45,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	_update_flip(delta)
+
+
+## Makes the cat hop up, as when it lands on a monster.
+func bounce() -> void:
+	velocity.y = -bounce_speed
+	_flip_time = 0.0
 
 
 func _update_flip(delta: float) -> void:

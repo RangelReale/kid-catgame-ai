@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
 [ext_resource type="PackedScene" path="res://scenes/cloud/cloud.tscn" id="3_cloud"]
+[ext_resource type="PackedScene" path="res://scenes/monster/monster.tscn" id="4_monster"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(2400, 32)
@@ -90,6 +91,16 @@ position = Vector2(1928, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
 shape = SubResource("RectangleShape2D_wall")
+
+[node name="Monster1" parent="." instance=ExtResource("4_monster")]
+position = Vector2(760, 238)
+
+[node name="Monster2" parent="." instance=ExtResource("4_monster")]
+position = Vector2(1150, 238)
+walk_distance = 80.0
+
+[node name="Monster3" parent="." instance=ExtResource("4_monster")]
+position = Vector2(1650, 238)
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(80, 238)
