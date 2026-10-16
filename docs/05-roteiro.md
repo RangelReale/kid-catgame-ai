@@ -140,3 +140,9 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   a tecla - volta para a anterior (`go_to_next_level` e
   `go_to_previous_level`, também no teclado numérico e com Page Down e Page
   Up).
+- [x] 2026-10-16: montanha-russa e torre do terror no parque. A fase 16
+  ficou com seis telas. A montanha-russa (`scenes/roller_coaster/`) tem um
+  carrinho que sobe e desce os morros do trilho, vai e volta, e leva o gato
+  junto. A "torre do terror" virou uma torre alta e alegre
+  (`scenes/drop_tower/`), sem susto: a cadeirinha sobe devagar, espera lá
+  em cima e desce rápido, mas não demais.

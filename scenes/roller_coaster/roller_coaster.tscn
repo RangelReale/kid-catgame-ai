@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/roller_coaster/roller_coaster.gd" id="1_roller_coaster"]
+
+[sub_resource type="Curve2D" id="Curve2D_track"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0.0, -0.0, 0, 0, 0, 0, 10.0, -0.2, 0, 0, 0, 0, 20.0, -0.8, 0, 0, 0, 0, 30.0, -1.9, 0, 0, 0, 0, 40.0, -3.5, 0, 0, 0, 0, 50.0, -5.7, 0, 0, 0, 0, 60.0, -8.5, 0, 0, 0, 0, 70.0, -11.8, 0, 0, 0, 0, 80.0, -15.6, 0, 0, 0, 0, 90.0, -19.7, 0, 0, 0, 0, 100.0, -24.0, 0, 0, 0, 0, 110.0, -28.3, 0, 0, 0, 0, 120.0, -32.6, 0, 0, 0, 0, 130.0, -36.5, 0, 0, 0, 0, 140.0, -39.9, 0, 0, 0, 0, 150.0, -42.7, 0, 0, 0, 0, 160.0, -44.8, 0, 0, 0, 0, 170.0, -46.1, 0, 0, 0, 0, 180.0, -46.6, 0, 0, 0, 0, 190.0, -46.2, 0, 0, 0, 0, 200.0, -45.0, 0, 0, 0, 0, 210.0, -43.2, 0, 0, 0, 0, 220.0, -40.8, 0, 0, 0, 0, 230.0, -38.0, 0, 0, 0, 0, 240.0, -35.1, 0, 0, 0, 0, 250.0, -32.2, 0, 0, 0, 0, 260.0, -29.5, 0, 0, 0, 0, 270.0, -27.2, 0, 0, 0, 0, 280.0, -25.5, 0, 0, 0, 0, 290.0, -24.4, 0, 0, 0, 0, 300.0, -24.0, 0, 0, 0, 0, 310.0, -24.4, 0, 0, 0, 0, 320.0, -25.5, 0, 0, 0, 0, 330.0, -27.2, 0, 0, 0, 0, 340.0, -29.5, 0, 0, 0, 0, 350.0, -32.2, 0, 0, 0, 0, 360.0, -35.1, 0, 0, 0, 0, 370.0, -38.0, 0, 0, 0, 0, 380.0, -40.8, 0, 0, 0, 0, 390.0, -43.2, 0, 0, 0, 0, 400.0, -45.0, 0, 0, 0, 0, 410.0, -46.2, 0, 0, 0, 0, 420.0, -46.6, 0, 0, 0, 0, 430.0, -46.1, 0, 0, 0, 0, 440.0, -44.8, 0, 0, 0, 0, 450.0, -42.7, 0, 0, 0, 0, 460.0, -39.9, 0, 0, 0, 0, 470.0, -36.5, 0, 0, 0, 0, 480.0, -32.6, 0, 0, 0, 0, 490.0, -28.3, 0, 0, 0, 0, 500.0, -24.0, 0, 0, 0, 0, 510.0, -19.7, 0, 0, 0, 0, 520.0, -15.6, 0, 0, 0, 0, 530.0, -11.8, 0, 0, 0, 0, 540.0, -8.5, 0, 0, 0, 0, 550.0, -5.7, 0, 0, 0, 0, 560.0, -3.5, 0, 0, 0, 0, 570.0, -1.9, 0, 0, 0, 0, 580.0, -0.8, 0, 0, 0, 0, 590.0, -0.2, 0, 0, 0, 0, 600.0, -0.0)
+}
+point_count = 61
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cart"]
+size = Vector2(30, 6)
+
+[node name="RollerCoaster" type="Path2D"]
+curve = SubResource("Curve2D_track")
+script = ExtResource("1_roller_coaster")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Post1" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(58.5, -8.5, 61.5, -8.5, 61.5, 0, 58.5, 0)
+
+[node name="Post2" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(118.5, -32.6, 121.5, -32.6, 121.5, 0, 118.5, 0)
+
+[node name="Post3" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(178.5, -46.6, 181.5, -46.6, 181.5, 0, 178.5, 0)
+
+[node name="Post4" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(238.5, -35.1, 241.5, -35.1, 241.5, 0, 238.5, 0)
+
+[node name="Post5" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(298.5, -24.0, 301.5, -24.0, 301.5, 0, 298.5, 0)
+
+[node name="Post6" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(358.5, -35.1, 361.5, -35.1, 361.5, 0, 358.5, 0)
+
+[node name="Post7" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(418.5, -46.6, 421.5, -46.6, 421.5, 0, 418.5, 0)
+
+[node name="Post8" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(478.5, -32.6, 481.5, -32.6, 481.5, 0, 478.5, 0)
+
+[node name="Post9" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.6, 0.68, 1)
+polygon = PackedVector2Array(538.5, -8.5, 541.5, -8.5, 541.5, 0, 538.5, 0)
+
+[node name="Track" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, -0.0, 10.0, -0.2, 20.0, -0.8, 30.0, -1.9, 40.0, -3.5, 50.0, -5.7, 60.0, -8.5, 70.0, -11.8, 80.0, -15.6, 90.0, -19.7, 100.0, -24.0, 110.0, -28.3, 120.0, -32.6, 130.0, -36.5, 140.0, -39.9, 150.0, -42.7, 160.0, -44.8, 170.0, -46.1, 180.0, -46.6, 190.0, -46.2, 200.0, -45.0, 210.0, -43.2, 220.0, -40.8, 230.0, -38.0, 240.0, -35.1, 250.0, -32.2, 260.0, -29.5, 270.0, -27.2, 280.0, -25.5, 290.0, -24.4, 300.0, -24.0, 310.0, -24.4, 320.0, -25.5, 330.0, -27.2, 340.0, -29.5, 350.0, -32.2, 360.0, -35.1, 370.0, -38.0, 380.0, -40.8, 390.0, -43.2, 400.0, -45.0, 410.0, -46.2, 420.0, -46.6, 430.0, -46.1, 440.0, -44.8, 450.0, -42.7, 460.0, -39.9, 470.0, -36.5, 480.0, -32.6, 490.0, -28.3, 500.0, -24.0, 510.0, -19.7, 520.0, -15.6, 530.0, -11.8, 540.0, -8.5, 550.0, -5.7, 560.0, -3.5, 570.0, -1.9, 580.0, -0.8, 590.0, -0.2, 600.0, -0.0)
+width = 3.0
+default_color = Color(1, 0.4, 0.5, 1)
+
+[node name="Cart" type="AnimatableBody2D" parent="."]
+
+[node name="Visual" type="Node2D" parent="Cart"]
+
+[node name="Body" type="Polygon2D" parent="Cart/Visual"]
+color = Color(1, 0.8, 0.25, 1)
+polygon = PackedVector2Array(-17, -16, 17, -16, 15, -4, -15, -4)
+
+[node name="Stripe" type="Polygon2D" parent="Cart/Visual"]
+color = Color(1, 0.45, 0.3, 1)
+polygon = PackedVector2Array(-16, -11, 16, -11, 15.5, -8, -15.5, -8)
+
+[node name="WheelBack" type="Polygon2D" parent="Cart/Visual"]
+position = Vector2(-10, -3)
+color = Color(0.25, 0.25, 0.3, 1)
+polygon = PackedVector2Array(0, -3, 2, -2, 3, 0, 2, 2, 0, 3, -2, 2, -3, 0, -2, -2)
+
+[node name="WheelFront" type="Polygon2D" parent="Cart/Visual"]
+position = Vector2(10, -3)
+color = Color(0.25, 0.25, 0.3, 1)
+polygon = PackedVector2Array(0, -3, 2, -2, 3, 0, 2, 2, 0, 3, -2, 2, -3, 0, -2, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cart"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_cart")
+one_way_collision = true

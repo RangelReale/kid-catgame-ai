@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/drop_tower/drop_tower.gd" id="1_drop_tower"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seat"]
+size = Vector2(40, 6)
+
+[node name="DropTower" type="Node2D"]
+script = ExtResource("1_drop_tower")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Tower" type="Polygon2D" parent="Visual"]
+color = Color(0.55, 0.45, 0.75, 1)
+polygon = PackedVector2Array(-8, 0, -8, -210, 8, -210, 8, 0)
+
+[node name="Top" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.45, 0.55, 1)
+polygon = PackedVector2Array(-18, -210, 18, -210, 0, -232)
+
+[node name="Star" type="Polygon2D" parent="Visual"]
+position = Vector2(0, -238)
+color = Color(1, 0.85, 0.3, 1)
+polygon = PackedVector2Array(0, -6, 1.5, -2, 6, -2, 2.5, 1, 4, 5, 0, 2.5, -4, 5, -2.5, 1, -6, -2, -1.5, -2)
+
+[node name="Lights" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.9, 0.5, 1)
+polygon = PackedVector2Array(-2, -40, 2, -40, 2, -36, -2, -36, -2, -80, 2, -80, 2, -76, -2, -76, -2, -120, 2, -120, 2, -116, -2, -116, -2, -160, 2, -160, 2, -156, -2, -156)
+
+[node name="Seat" type="AnimatableBody2D" parent="."]
+
+[node name="Visual" type="Node2D" parent="Seat"]
+
+[node name="Ring" type="Polygon2D" parent="Seat/Visual"]
+color = Color(0.3, 0.75, 0.9, 1)
+polygon = PackedVector2Array(-22, -14, 22, -14, 22, -6, -22, -6)
+
+[node name="Bar" type="Polygon2D" parent="Seat/Visual"]
+color = Color(1, 0.85, 0.3, 1)
+polygon = PackedVector2Array(-22, -16, 22, -16, 22, -14, -22, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seat"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_seat")
+one_way_collision = true
