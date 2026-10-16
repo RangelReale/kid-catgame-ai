@@ -135,6 +135,40 @@ O Mac atual tem o JDK 21. **Verificar:** se o Godot 4.7 aceita o JDK 21. Se
 ele exigir o 17, instale com `brew install openjdk@17` e aponte o Godot para
 esse JDK.
 
+### 3. iPad
+
+O jogo para iPad só pode ser gerado no Mac. Ele precisa do Xcode em
+`/Applications/Xcode.app` e de uma conta de desenvolvedor da Apple. O Team ID
+da conta (`5XV6P36QZR`) já está na predefinição "iOS".
+
+O `xcode-select` deste Mac aponta para as Command Line Tools. Por isso os
+comandos abaixo usam `DEVELOPER_DIR` para achar o Xcode.
+
+O iPad precisa estar pareado com o Mac, pelo cabo ou por Wi-Fi. Para ver os
+aparelhos e o identificador (UDID) de cada um:
+
+```sh
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+xcrun devicectl list devices
+```
+
+Para gerar, instalar e abrir o jogo:
+
+```sh
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+mkdir -p build/ios
+godot --headless --path . --export-debug "iOS" build/ios/catgame.xcodeproj
+xcodebuild -project build/ios/catgame.xcodeproj -scheme catgame \
+  -configuration Debug -destination 'platform=iOS,id=<UDID>' \
+  -derivedDataPath build/ios/dd -allowProvisioningUpdates build
+xcrun devicectl device install app --device <UDID> \
+  build/ios/dd/Build/Products/Debug-iphoneos/catgame.app
+xcrun devicectl device process launch --device <UDID> com.rangelreale.catgame
+```
+
+O iPad precisa estar desbloqueado para o jogo abrir. A predefinição só gera o
+projeto do Xcode (`export_project_only`); o `xcodebuild` compila e assina.
+
 ## Comum aos dois sistemas
 
 ### Modelos de exportação
@@ -156,6 +190,7 @@ Copie o conteúdo da pasta `templates/` dele para
 | Windows | Sim | Sim |
 | Android | Sim | Sim |
 | Mac | Sim, mas sem assinatura | Sim |
+| iPad | Não | Sim |
 
 Um aplicativo de Mac sem assinatura mostra um aviso de segurança ao abrir.
 Por isso a versão final para Mac deve ser exportada no Mac.

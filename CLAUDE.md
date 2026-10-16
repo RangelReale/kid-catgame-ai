@@ -16,7 +16,7 @@ um monstrinho de lado não faz nada. Há duas fases. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, três botões redondos nos cantos de baixo fazem o gato andar e
-pular (início do marco 6). A filha pediu 20 fases. Atualize esta seção a cada marco.
+pular (início do marco 6). O jogo também roda no iPad. A filha pediu 20 fases. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
 
@@ -61,12 +61,13 @@ Nos comandos com `--headless`, e sempre que a saída importa, use
 | Importar recursos sem abrir o editor | `godot --headless --path . --import` |
 | Exportar para Windows | `godot --headless --path . --export-release "Windows Desktop" build/windows/catgame.exe` |
 | Exportar para Android | `godot --headless --path . --export-debug "Android" build/android/catgame.apk` |
+| Exportar para iPad (só no Mac) | `godot --headless --path . --export-debug "iOS" build/ios/catgame.xcodeproj` |
 | Exportar para Mac | `godot --headless --path . --export-release "macOS" build/macos/catgame.zip` |
 
 Os nomes entre aspas são os nomes das predefinições em `export_presets.cfg`.
-Por enquanto, esse arquivo só tem a predefinição "Android". As outras nascem
-no marco 5. A pasta de destino precisa existir antes da exportação. Para
-instalar no Retroid Pocket 3+, veja [docs/02-ambiente.md](docs/02-ambiente.md).
+Por enquanto, esse arquivo só tem as predefinições "Android" e "iOS". As
+outras nascem no marco 5. A pasta de destino precisa existir antes da exportação. Para
+instalar no Retroid Pocket 3+ ou no iPad, veja [docs/02-ambiente.md](docs/02-ambiente.md).
 
 Para confirmar que o jogo abre sem erros, rode-o por alguns quadros e leia a
 saída: `godot --path . --quit-after 120` (no Windows, com `godot_console`).
