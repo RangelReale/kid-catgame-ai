@@ -12,7 +12,7 @@ cada batida de asa. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
-um monstrinho de lado não faz nada. Há nove fases. A terceira é uma praia com mar raso no fim. A quarta é o
+um monstrinho de lado não faz nada. Há dez fases. A terceira é uma praia com mar raso no fim. A quarta é o
 fundo do mar, onde o gato tem cauda de sereia e nada: sobe com pular, desce
 com `move_down` e fica parado na altura quando nada é apertado. A quinta
 começa no mar e entra numa sala de computadores. Na sexta, um homem bravo
@@ -20,7 +20,8 @@ anda atrás do gato pela sala; se ele alcançar o gato, a fase recomeça. A sét
 fácil, com um ratinho num disco voador e, no fim, um ratão com barra de
 vida: três pulos em cima dele fazem a bandeira aparecer. A oitava é no céu: o gato
 voa livre e desvia de passarinhos; se um encostar nele, a fase recomeça. A nona é o gato descendo do céu, de
-nuvem em nuvem, até a grama. Uma bandeira no fim de
+nuvem em nuvem, até a grama. A décima é dentro de um avião: esbarrar numa
+mala faz a fase recomeçar. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e
