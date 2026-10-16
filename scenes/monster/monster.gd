@@ -6,8 +6,9 @@ extends Area2D
 @export var walk_distance: float = 60.0
 
 ## How far above the monster's feet the cat's feet must be to count as
-## landing on top, in pixels.
-const STOMP_HEIGHT := 6.0
+## landing on top, in pixels. Small, so a falling cat has a few frames to hit;
+## a cat standing on the floor is never above it.
+const STOMP_HEIGHT := 2.0
 
 var _start_x: float
 var _direction: float = 1.0
