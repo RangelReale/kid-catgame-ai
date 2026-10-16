@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/airplane/airplane.tscn" id="1_airplane"]
+[ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
+
+[node name="Level11" type="Node2D"]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sun" parent="Sky" instance=ExtResource("2_sun")]
+position = Vector2(420, 45)
+
+[node name="Grass" type="Polygon2D" parent="."]
+color = Color(0.35, 0.65, 0.25, 1)
+polygon = PackedVector2Array(-100, 238, 3500, 238, 3500, 600, -100, 600)
+
+[node name="RunwayStart" type="Polygon2D" parent="."]
+color = Color(0.45, 0.45, 0.5, 1)
+polygon = PackedVector2Array(-100, 238, 700, 238, 700, 600, -100, 600)
+
+[node name="RunwayEnd" type="Polygon2D" parent="."]
+color = Color(0.45, 0.45, 0.5, 1)
+polygon = PackedVector2Array(2500, 238, 3500, 238, 3500, 600, 2500, 600)
+
+[node name="Cloud1" type="Polygon2D" parent="."]
+position = Vector2(700, 60)
+scale = Vector2(1.0, 1.0)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud2" type="Polygon2D" parent="."]
+position = Vector2(1000, 150)
+scale = Vector2(1.3, 1.3)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud3" type="Polygon2D" parent="."]
+position = Vector2(1300, 50)
+scale = Vector2(0.9, 0.9)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud4" type="Polygon2D" parent="."]
+position = Vector2(1550, 170)
+scale = Vector2(1.1, 1.1)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud5" type="Polygon2D" parent="."]
+position = Vector2(1800, 70)
+scale = Vector2(1.2, 1.2)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud6" type="Polygon2D" parent="."]
+position = Vector2(2050, 140)
+scale = Vector2(0.8, 0.8)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud7" type="Polygon2D" parent="."]
+position = Vector2(2400, 60)
+scale = Vector2(1.0, 1.0)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Cloud8" type="Polygon2D" parent="."]
+position = Vector2(2900, 90)
+scale = Vector2(1.1, 1.1)
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="Airplane" parent="." instance=ExtResource("1_airplane")]
+position = Vector2(120, 238)
+
+[node name="Camera2D" type="Camera2D" parent="Airplane"]
+ignore_rotation = true
+limit_left = 0
+limit_right = 3400
+limit_bottom = 270
+position_smoothing_enabled = true

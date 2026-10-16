@@ -42,10 +42,11 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
 - [x] 2026-10-15: som engraçado de pulo.
-- [ ] 2026-10-15: 20 fases. Feitas 10: a fase 1, de chão verde, a fase 2,
+- [ ] 2026-10-15: 20 fases. Feitas 11: a fase 1, de chão verde, a fase 2,
   de chão de areia, a fase 3, a praia, a fase 4, o fundo do mar, a fase 5,
   a sala de computadores, a fase 6, a fuga do homem bravo, a fase 7, a
-  floresta, a fase 8, o céu, a fase 9, a descida, e a fase 10, o avião. Uma bandeira no fim de cada fase leva à próxima, e
+  floresta, a fase 8, o céu, a fase 9, a descida, a fase 10, o avião, e a
+  fase 11, o voo. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
 - [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
@@ -92,3 +93,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   direto para aquela fase. As teclas 1 a 9 levam às fases 1 a 9, e a tecla
   0 leva à fase 10 (ações `go_to_level_1` a `go_to_level_10`, no teclado
   normal e no numérico).
+- [x] 2026-10-16: depois, o avião decola, e é preciso esperar ele pousar;
+  quando pousa, vem a outra fase. É a fase 11, sem controles: o avião
+  (`scenes/airplane/`), com o gato na janela, decola, voa entre nuvens,
+  pousa e para. Logo depois começa a fase seguinte.
