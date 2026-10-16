@@ -10,7 +10,9 @@ ar, bate as asas para subir mais, até três vezes antes de pousar. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
-um monstrinho de lado não faz nada. O próximo passo é o marco 4. Atualize esta seção a cada marco.
+um monstrinho de lado não faz nada. Há duas fases. Uma bandeira no fim de
+cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
+pronto). Do marco 4, falta o peixe para pegar. A filha pediu 20 fases. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
 

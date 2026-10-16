@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/goal/goal.gd" id="1_goal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(24, 56)
+
+[node name="Goal" type="Area2D"]
+script = ExtResource("1_goal")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Pole" type="Polygon2D" parent="Visual"]
+color = Color(0.55, 0.35, 0.2, 1)
+polygon = PackedVector2Array(-2, -56, 2, -56, 2, 0, -2, 0)
+
+[node name="Flag" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.3, 0.55, 1)
+polygon = PackedVector2Array(2, -56, 24, -48, 2, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_goal")
