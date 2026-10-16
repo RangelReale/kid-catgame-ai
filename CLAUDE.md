@@ -17,7 +17,8 @@ fundo do mar, onde o gato tem cauda de sereia e nada: sobe com pular, desce
 com `move_down` e fica parado na altura quando nada é apertado. A quinta
 começa no mar e entra numa sala de computadores. Na sexta, um homem bravo
 anda atrás do gato pela sala; se ele alcançar o gato, a fase recomeça. A sétima é uma floresta bem
-fácil, com um ratinho num disco voador. Uma bandeira no fim de
+fácil, com um ratinho num disco voador e, no fim, um ratão com barra de
+vida: três pulos em cima dele fazem a bandeira aparecer. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e

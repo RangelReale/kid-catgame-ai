@@ -91,6 +91,13 @@ func bounce() -> void:
 	_flip_time = 0.0
 
 
+## Puts the cat back at a spot in the level, standing still.
+func respawn(spot: Vector2) -> void:
+	global_position = spot
+	velocity = Vector2.ZERO
+	_flip_time = -1.0
+
+
 func _update_flip(delta: float) -> void:
 	var angle := 0.0
 	if _flip_time >= 0.0:

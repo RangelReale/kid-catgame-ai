@@ -69,3 +69,10 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   inimigo pequeno: um ratinho numa nave. É a fase 7: duas telas de largura,
   árvores, florzinhas e um só inimigo, o ratinho num disco voador
   (`scenes/mouse_ship/`, que usa o script do monstrinho).
+- [x] 2026-10-16: no fim da floresta, um ratão com uma barra de vida para
+  lutar. Se o gato não conseguir vencer, volta para o fim da fase. A
+  floresta ficou com três telas. O ratão (`scenes/big_rat/`) anda perto da
+  bandeira, que fica escondida até ele ser vencido. Cada pulo em cima dele
+  tira um pedaço da barra rosa; com três, ele some num "puf" grande e a
+  bandeira aparece. Se ele encostar no gato de lado, o gato volta para um
+  pouco antes dele e o ratão recupera a vida toda.
