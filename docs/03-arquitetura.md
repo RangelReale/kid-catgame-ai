@@ -34,6 +34,8 @@ assets/
   music/             músicas
   fonts/             fontes
 docs/                estes documentos
+tools/               ferramentas fora do jogo; o Godot ignora a pasta
+  promo/             piloto automático e filtro do ffmpeg do vídeo de promoção
 build/               jogos exportados (fora do Git)
 ```
 
