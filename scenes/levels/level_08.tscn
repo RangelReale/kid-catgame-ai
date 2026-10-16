@@ -1,0 +1,175 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
+[ext_resource type="PackedScene" path="res://scenes/cloud/cloud.tscn" id="3_cloud"]
+[ext_resource type="PackedScene" path="res://scenes/bird/bird.tscn" id="4_bird"]
+[ext_resource type="PackedScene" path="res://scenes/goal/goal.tscn" id="5_goal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cloud_platform"]
+size = Vector2(120, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(16, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edge"]
+size = Vector2(2400, 16)
+
+[node name="Level08" type="Node2D"]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sun" parent="Sky" instance=ExtResource("2_sun")]
+position = Vector2(420, 45)
+
+[node name="Cloud1" parent="Sky" instance=ExtResource("3_cloud")]
+position = Vector2(80, 40)
+
+[node name="Cloud2" parent="Sky" instance=ExtResource("3_cloud")]
+position = Vector2(260, 220)
+scale = Vector2(1.4, 1.4)
+
+[node name="StartCloud" type="StaticBody2D" parent="."]
+position = Vector2(80, 204)
+
+[node name="Visual" type="Polygon2D" parent="StartCloud"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartCloud"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_cloud_platform")
+
+[node name="EndCloud" type="StaticBody2D" parent="."]
+position = Vector2(2320, 204)
+
+[node name="Visual" type="Polygon2D" parent="EndCloud"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndCloud"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_cloud_platform")
+
+[node name="BackCloud1" type="Polygon2D" parent="."]
+position = Vector2(500, 250)
+scale = Vector2(1.0, 1.0)
+color = Color(1, 1, 1, 0.7)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="BackCloud2" type="Polygon2D" parent="."]
+position = Vector2(1000, 40)
+scale = Vector2(0.8, 0.8)
+color = Color(1, 1, 1, 0.7)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="BackCloud3" type="Polygon2D" parent="."]
+position = Vector2(1500, 240)
+scale = Vector2(1.2, 1.2)
+color = Color(1, 1, 1, 0.7)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="BackCloud4" type="Polygon2D" parent="."]
+position = Vector2(1900, 60)
+scale = Vector2(0.9, 0.9)
+color = Color(1, 1, 1, 0.7)
+polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(2408, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(1200, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+shape = SubResource("RectangleShape2D_edge")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(1200, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+shape = SubResource("RectangleShape2D_edge")
+
+[node name="Bird1" parent="." instance=ExtResource("4_bird")]
+position = Vector2(400, 135)
+travel = Vector2(0, 70)
+trips_per_second = 0.3
+phase = 0.0
+
+[node name="Bird2" parent="." instance=ExtResource("4_bird")]
+position = Vector2(620, 135)
+travel = Vector2(0, 90)
+trips_per_second = 0.25
+phase = 0.5
+
+[node name="Bird3" parent="." instance=ExtResource("4_bird")]
+position = Vector2(820, 80)
+travel = Vector2(60, 0)
+trips_per_second = 0.3
+phase = 0.0
+
+[node name="Bird4" parent="." instance=ExtResource("4_bird")]
+position = Vector2(960, 190)
+travel = Vector2(0, 50)
+trips_per_second = 0.35
+phase = 0.25
+
+[node name="Bird5" parent="." instance=ExtResource("4_bird")]
+position = Vector2(1160, 135)
+travel = Vector2(0, 100)
+trips_per_second = 0.2
+phase = 0.75
+
+[node name="Bird6" parent="." instance=ExtResource("4_bird")]
+position = Vector2(1360, 60)
+travel = Vector2(0, 40)
+trips_per_second = 0.4
+phase = 0.0
+
+[node name="Bird7" parent="." instance=ExtResource("4_bird")]
+position = Vector2(1360, 210)
+travel = Vector2(0, 40)
+trips_per_second = 0.4
+phase = 0.5
+
+[node name="Bird8" parent="." instance=ExtResource("4_bird")]
+position = Vector2(1600, 135)
+travel = Vector2(80, 0)
+trips_per_second = 0.25
+phase = 0.0
+
+[node name="Bird9" parent="." instance=ExtResource("4_bird")]
+position = Vector2(1820, 135)
+travel = Vector2(0, 100)
+trips_per_second = 0.3
+phase = 0.25
+
+[node name="Bird10" parent="." instance=ExtResource("4_bird")]
+position = Vector2(2060, 100)
+travel = Vector2(0, 80)
+trips_per_second = 0.3
+phase = 0.6
+
+[node name="Goal" parent="." instance=ExtResource("5_goal")]
+position = Vector2(2350, 200)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(60, 200)
+flying = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2400
+limit_bottom = 270
+position_smoothing_enabled = true

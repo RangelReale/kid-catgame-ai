@@ -17,9 +17,12 @@ extends CharacterBody2D
 @export var flip_duration: float = 0.5
 ## When true, the cat has a mermaid tail instead of legs and cat tail.
 @export var mermaid: bool = false
-## Mermaid only: up and down swimming speed, in pixels per second.
+## When true, the cat flies freely with its wings, like the mermaid swims.
+@export var flying: bool = false
+## Mermaid or flying only: up and down speed, in pixels per second.
 @export var swim_speed: float = 130.0
-## Mermaid only: how fast the cat starts and stops swimming, in pixels per second squared.
+## Mermaid or flying only: how fast the cat starts and stops going up or down,
+## in pixels per second squared.
 @export var swim_acceleration: float = 700.0
 
 ## Point the somersault turns around: the middle of the cat.
@@ -42,7 +45,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if mermaid:
+	if mermaid or flying:
 		_swim(delta)
 	else:
 		_walk_and_jump(delta)
@@ -53,8 +56,8 @@ func _physics_process(delta: float) -> void:
 	_update_flip(delta)
 
 
-## Jump swims the mermaid cat up and move_down swims it down. With neither,
-## it stays at the same height.
+## Jump makes the mermaid or flying cat go up and move_down makes it go down.
+## With neither, it stays at the same height.
 func _swim(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		_play_jump_sound(1.0)

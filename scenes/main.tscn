@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/levels/level_01.tscn" id="2_level"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" path="res://scenes/levels/level_05.tscn" id="7_level"]
 [ext_resource type="PackedScene" path="res://scenes/levels/level_06.tscn" id="8_level"]
 [ext_resource type="PackedScene" path="res://scenes/levels/level_07.tscn" id="9_level"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_08.tscn" id="10_level"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
-levels = Array[PackedScene]([ExtResource("2_level"), ExtResource("3_level"), ExtResource("5_level"), ExtResource("6_level"), ExtResource("7_level"), ExtResource("8_level"), ExtResource("9_level")])
+levels = Array[PackedScene]([ExtResource("2_level"), ExtResource("3_level"), ExtResource("5_level"), ExtResource("6_level"), ExtResource("7_level"), ExtResource("8_level"), ExtResource("9_level"), ExtResource("10_level")])
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]

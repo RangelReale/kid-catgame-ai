@@ -15,7 +15,7 @@ var _caught: bool = false
 
 
 func _ready() -> void:
-	add_to_group("angry_man")
+	add_to_group("catcher")
 	body_entered.connect(_on_body_entered)
 
 

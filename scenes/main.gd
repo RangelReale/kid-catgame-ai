@@ -22,15 +22,15 @@ func _load_level(index: int) -> void:
 	for goal in get_tree().get_nodes_in_group("goal"):
 		if _level.is_ancestor_of(goal):
 			goal.reached.connect(_on_goal_reached)
-	for angry_man in get_tree().get_nodes_in_group("angry_man"):
-		if _level.is_ancestor_of(angry_man):
-			angry_man.caught.connect(_on_caught)
+	for catcher in get_tree().get_nodes_in_group("catcher"):
+		if _level.is_ancestor_of(catcher):
+			catcher.caught.connect(_on_caught)
 
 
 func _on_goal_reached() -> void:
 	_load_level.call_deferred((_level_index + 1) % levels.size())
 
 
-## The angry man caught the cat: the level starts over.
+## Something caught the cat, like the angry man: the level starts over.
 func _on_caught() -> void:
 	_load_level.call_deferred(_level_index)
