@@ -1,0 +1,225 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
+[ext_resource type="PackedScene" path="res://scenes/goal/goal.tscn" id="5_goal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cloud_platform"]
+size = Vector2(80, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(600, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(16, 1400)
+
+[node name="Level09" type="Node2D"]
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sun" parent="Sky" instance=ExtResource("2_sun")]
+position = Vector2(420, 45)
+
+[node name="CloudStep1" type="StaticBody2D" parent="."]
+position = Vector2(70, -750)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep1"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep1"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep2" type="StaticBody2D" parent="."]
+position = Vector2(240, -670)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep2"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep2"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep3" type="StaticBody2D" parent="."]
+position = Vector2(400, -590)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep3"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep3"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep4" type="StaticBody2D" parent="."]
+position = Vector2(240, -510)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep4"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep4"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep5" type="StaticBody2D" parent="."]
+position = Vector2(80, -430)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep5"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep5"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep6" type="StaticBody2D" parent="."]
+position = Vector2(240, -350)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep6"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep6"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep7" type="StaticBody2D" parent="."]
+position = Vector2(400, -270)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep7"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep7"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep8" type="StaticBody2D" parent="."]
+position = Vector2(240, -190)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep8"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep8"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep9" type="StaticBody2D" parent="."]
+position = Vector2(80, -110)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep9"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep9"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep10" type="StaticBody2D" parent="."]
+position = Vector2(240, -30)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep10"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep10"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep11" type="StaticBody2D" parent="."]
+position = Vector2(400, 50)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep11"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep11"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="CloudStep12" type="StaticBody2D" parent="."]
+position = Vector2(240, 130)
+
+[node name="Visual" type="Polygon2D" parent="CloudStep12"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-40, 4, -40, -1, -32, -9, -20, -10, -12, -17, 2, -18, 12, -12, 24, -15, 34, -8, 40, -1, 40, 4, 32, 10, -32, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudStep12"]
+shape = SubResource("RectangleShape2D_cloud_platform")
+one_way_collision = true
+
+[node name="Tree1" type="Node2D" parent="."]
+position = Vector2(30, 238)
+scale = Vector2(1.0, 1.0)
+
+[node name="Trunk" type="Polygon2D" parent="Tree1"]
+color = Color(0.5, 0.33, 0.2, 1)
+polygon = PackedVector2Array(-5, 0, -4, -50, 4, -50, 5, 0)
+
+[node name="Leaves" type="Polygon2D" parent="Tree1"]
+color = Color(0.25, 0.7, 0.3, 1)
+polygon = PackedVector2Array(0, -100, 16, -94, 26, -80, 28, -64, 20, -50, 0, -44, -20, -50, -28, -64, -26, -80, -16, -94)
+
+[node name="Tree2" type="Node2D" parent="."]
+position = Vector2(150, 238)
+scale = Vector2(1.3, 1.3)
+
+[node name="Trunk" type="Polygon2D" parent="Tree2"]
+color = Color(0.5, 0.33, 0.2, 1)
+polygon = PackedVector2Array(-5, 0, -4, -50, 4, -50, 5, 0)
+
+[node name="Leaves" type="Polygon2D" parent="Tree2"]
+color = Color(0.25, 0.7, 0.3, 1)
+polygon = PackedVector2Array(0, -100, 16, -94, 26, -80, 28, -64, 20, -50, 0, -44, -20, -50, -28, -64, -26, -80, -16, -94)
+
+[node name="Tree3" type="Node2D" parent="."]
+position = Vector2(330, 238)
+scale = Vector2(0.9, 0.9)
+
+[node name="Trunk" type="Polygon2D" parent="Tree3"]
+color = Color(0.5, 0.33, 0.2, 1)
+polygon = PackedVector2Array(-5, 0, -4, -50, 4, -50, 5, 0)
+
+[node name="Leaves" type="Polygon2D" parent="Tree3"]
+color = Color(0.25, 0.7, 0.3, 1)
+polygon = PackedVector2Array(0, -100, 16, -94, 26, -80, 28, -64, 20, -50, 0, -44, -20, -50, -28, -64, -26, -80, -16, -94)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(240, 254)
+
+[node name="Visual" type="Polygon2D" parent="Floor"]
+color = Color(0.35, 0.65, 0.25, 1)
+polygon = PackedVector2Array(-300, -16, 300, -16, 300, 400, -300, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-8, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(488, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Goal" parent="." instance=ExtResource("5_goal")]
+position = Vector2(440, 238)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(60, -754)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = -810
+limit_right = 480
+limit_bottom = 270
+position_smoothing_enabled = true
