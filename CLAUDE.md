@@ -13,7 +13,8 @@ quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
 um monstrinho de lado não faz nada. Há quatro fases. A terceira é uma praia com mar raso no fim. A quarta é o
-fundo do mar, onde o gato tem cauda de sereia e nada. Uma bandeira no fim de
+fundo do mar, onde o gato tem cauda de sereia e sobe nadando enquanto o
+jogador segura pular. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, três botões redondos nos cantos de baixo fazem o gato andar e

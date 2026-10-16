@@ -50,5 +50,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   e, no fim, um mar raso com ondinhas. O gato entra na água até a bandeira.
 - [x] 2026-10-16: fase do fundo do mar, onde o gato ganha cauda de sereia.
   É a fase 4: água azul, raios de luz, bolhas, algas, pedras e uma estrela-do-mar.
-  O gato troca as patas e o rabo por uma cauda de sereia e nada: cai devagar
-  e pode bater as asas quantas vezes quiser.
+  O gato troca as patas e o rabo por uma cauda de sereia e nada.
+- [x] 2026-10-16: na fase da água, o gato tem que ir para cima. Segurando
+  pular, o gato sereia sobe nadando; soltando, ele desce devagar.
