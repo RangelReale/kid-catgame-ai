@@ -59,6 +59,11 @@ polygon = PackedVector2Array(1, -4, 4, -4, 4, 0, 1, 0)
 color = Color(1, 0.25, 0.25, 1)
 polygon = PackedVector2Array(-14, -8, -19, -10, -22, -16, -20, -18, -18, -13, -14, -11)
 
+[node name="MermaidTail" type="Polygon2D" parent="Visual"]
+visible = false
+color = Color(0.2, 0.8, 0.75, 1)
+polygon = PackedVector2Array(4, -4, -14, -4, -21, -5, -27, -10, -25, -3, -28, 2, -21, -1, -14, 0, 4, 0)
+
 [node name="WingFront" type="Polygon2D" parent="Visual"]
 color = Color(0.97, 0.97, 1, 1)
 polygon = PackedVector2Array(-2, -11, -10, -11, -14, -19, -8, -23, -4, -18)

@@ -15,6 +15,8 @@ extends CharacterBody2D
 @export var bounce_speed: float = 220.0
 ## Time the somersault takes during a jump, in seconds.
 @export var flip_duration: float = 0.5
+## When true, the cat has a mermaid tail instead of legs and cat tail.
+@export var mermaid: bool = false
 
 ## Point the somersault turns around: the middle of the cat.
 const FLIP_PIVOT := Vector2(0, -8)
@@ -26,6 +28,12 @@ var _air_jumps_left: int = 0
 
 @onready var _visual: Node2D = $Visual
 @onready var _jump_sound: AudioStreamPlayer = $JumpSound
+
+
+func _ready() -> void:
+	for part: CanvasItem in [$Visual/LegBackLeft, $Visual/LegBackRight, $Visual/LegFrontLeft, $Visual/LegFrontRight, $Visual/Tail]:
+		part.visible = not mermaid
+	$Visual/MermaidTail.visible = mermaid
 
 
 func _physics_process(delta: float) -> void:
