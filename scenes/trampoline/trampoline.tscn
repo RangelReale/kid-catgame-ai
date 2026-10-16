@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/trampoline/trampoline.gd" id="1_trampoline"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mat"]
+size = Vector2(40, 6)
+
+[node name="Trampoline" type="Area2D"]
+script = ExtResource("1_trampoline")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="LegLeft" type="Polygon2D" parent="Visual"]
+color = Color(0.5, 0.5, 0.55, 1)
+polygon = PackedVector2Array(-20, -10, -16, -10, -18, 0, -22, 0)
+
+[node name="LegRight" type="Polygon2D" parent="Visual"]
+color = Color(0.5, 0.5, 0.55, 1)
+polygon = PackedVector2Array(16, -10, 20, -10, 22, 0, 18, 0)
+
+[node name="Frame" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.45, 0.3, 1)
+polygon = PackedVector2Array(-24, -12, 24, -12, 24, -9, -24, -9)
+
+[node name="Mat" type="Polygon2D" parent="Visual"]
+color = Color(0.3, 0.5, 1, 1)
+polygon = PackedVector2Array(-20, -13, 20, -13, 20, -11, -20, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_mat")

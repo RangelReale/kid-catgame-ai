@@ -89,8 +89,9 @@ func _play_jump_sound(pitch: float) -> void:
 
 
 ## Makes the cat hop up, as when it lands on a monster.
-func bounce() -> void:
-	velocity.y = -bounce_speed
+## Pass a speed to bounce higher or lower, like on a trampoline.
+func bounce(speed_up: float = 0.0) -> void:
+	velocity.y = -(speed_up if speed_up > 0.0 else bounce_speed)
 	_flip_time = 0.0
 
 
