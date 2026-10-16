@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/airplane/airplane.tscn" id="1_airplane"]
 [ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
+[ext_resource type="PackedScene" path="res://scenes/friendly_man/friendly_man.tscn" id="3_friendly_man"]
 
 [node name="Level11" type="Node2D"]
 
@@ -71,8 +72,12 @@ scale = Vector2(1.1, 1.1)
 color = Color(1, 1, 1, 0.9)
 polygon = PackedVector2Array(-60, 4, -60, -2, -50, -12, -34, -14, -24, -24, -6, -26, 10, -18, 28, -22, 46, -12, 60, -2, 60, 4, 50, 14, -50, 14)
 
-[node name="Airplane" parent="." instance=ExtResource("1_airplane")]
+[node name="FriendlyMan" parent="." instance=ExtResource("3_friendly_man")]
+position = Vector2(3200, 238)
+
+[node name="Airplane" parent="." node_paths=PackedStringArray("show_on_landing") instance=ExtResource("1_airplane")]
 position = Vector2(120, 238)
+show_on_landing = NodePath("../FriendlyMan")
 
 [node name="Camera2D" type="Camera2D" parent="Airplane"]
 ignore_rotation = true

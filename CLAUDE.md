@@ -22,7 +22,8 @@ vida: três pulos em cima dele fazem a bandeira aparecer. A oitava é no céu: o
 voa livre e desvia de passarinhos; se um encostar nele, a fase recomeça. A nona é o gato descendo do céu, de
 nuvem em nuvem, até a grama. A décima é dentro de um avião: esbarrar numa
 mala faz a fase recomeçar. Na décima primeira, sem controles, o
-avião decola, voa e pousa sozinho. As teclas de 1 a 9 e o 0 pulam direto
+avião decola, voa e pousa sozinho, e um homem sorridente pega o gato no
+colo. As teclas de 1 a 9 e o 0 pulam direto
 para as fases de 1 a 10. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem

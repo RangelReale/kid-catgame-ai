@@ -97,3 +97,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   quando pousa, vem a outra fase. É a fase 11, sem controles: o avião
   (`scenes/airplane/`), com o gato na janela, decola, voa entre nuvens,
   pousa e para. Logo depois começa a fase seguinte.
+- [x] 2026-10-16: depois do pouso, um homem pega o gato no colo. Quando o
+  avião para, o gato some da janela e aparece no colo de um homem sorridente
+  (`scenes/friendly_man/`) ao lado do avião. Uns segundos depois, vem a fase
+  seguinte.

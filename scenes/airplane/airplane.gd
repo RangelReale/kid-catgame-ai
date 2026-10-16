@@ -19,7 +19,10 @@ signal reached
 ## How long the plane slows down before stopping, in pixels.
 @export var braking_distance: float = 200.0
 ## Seconds to wait after stopping before the next level.
-@export var wait_after_landing: float = 1.5
+@export var wait_after_landing: float = 4.0
+## Shown when the plane stops, like someone holding the cat. The cat leaves
+## the window at the same time.
+@export var show_on_landing: CanvasItem
 
 var _ground_y: float
 var _waiting: float = -1.0
@@ -28,6 +31,8 @@ var _waiting: float = -1.0
 func _ready() -> void:
 	add_to_group("goal")
 	_ground_y = position.y
+	if show_on_landing != null:
+		show_on_landing.hide()
 
 
 func _process(delta: float) -> void:
@@ -49,3 +54,7 @@ func _process(delta: float) -> void:
 	if position.x >= stop_x:
 		rotation = 0.0
 		_waiting = 0.0
+		if show_on_landing != null:
+			show_on_landing.show()
+			$Visual/Window3/CatFace.hide()
+			$Visual/Window3/CatEye.hide()
