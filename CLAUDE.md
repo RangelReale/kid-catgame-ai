@@ -6,7 +6,9 @@ Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
 **Estado atual:** o marco 3 do [roteiro](docs/05-roteiro.md) está pronto. O
 gato tem corpo arco-íris, patas, rabo e cabeça cor-de-rosa com orelhas, olho
 e boca, e asas. Ele anda e pula, com cambalhota, sobre um chão verde. No
-ar, bate as asas para subir mais, até três vezes antes de pousar. A fase tem
+ar, bate as asas para subir mais, até três vezes antes de pousar. Cada pulo
+faz um "boing" (`assets/sounds/jump.wav`, gerado por código), mais agudo a
+cada batida de asa. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar

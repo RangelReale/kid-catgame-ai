@@ -25,6 +25,7 @@ var _flip_time: float = -1.0
 var _air_jumps_left: int = 0
 
 @onready var _visual: Node2D = $Visual
+@onready var _jump_sound: AudioStreamPlayer = $JumpSound
 
 
 func _physics_process(delta: float) -> void:
@@ -37,14 +38,22 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = -jump_speed
 			_flip_time = 0.0
+			_play_jump_sound(1.0)
 		elif _air_jumps_left > 0:
 			velocity.y = -flap_speed
 			_air_jumps_left -= 1
+			_play_jump_sound(1.0 + 0.15 * (air_jumps - _air_jumps_left))
 
 	velocity.x = Input.get_axis("move_left", "move_right") * speed
 
 	move_and_slide()
 	_update_flip(delta)
+
+
+## Plays the "boing"; each wing flap sounds a little higher.
+func _play_jump_sound(pitch: float) -> void:
+	_jump_sound.pitch_scale = pitch
+	_jump_sound.play()
 
 
 ## Makes the cat hop up, as when it lands on a monster.

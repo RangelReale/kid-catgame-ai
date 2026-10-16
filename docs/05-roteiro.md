@@ -40,6 +40,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-15: monstrinhos no meio da fase. Ela pediu "monstrinhos pra
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
+- [x] 2026-10-15: som engraçado de pulo.
 - [ ] 2026-10-15: 20 fases. Feitas 2: a fase 1, de chão verde, e a fase 2,
   de chão de areia. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
