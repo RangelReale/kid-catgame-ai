@@ -42,7 +42,9 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
 - [x] 2026-10-15: som engraçado de pulo.
-- [ ] 2026-10-15: 20 fases. Feitas 2: a fase 1, de chão verde, e a fase 2,
-  de chão de areia. Uma bandeira no fim de cada fase leva à próxima, e
+- [ ] 2026-10-15: 20 fases. Feitas 3: a fase 1, de chão verde, a fase 2,
+  de chão de areia, e a fase 3, a praia. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
+- [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
+  e, no fim, um mar raso com ondinhas. O gato entra na água até a bandeira.
