@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/goal/goal.tscn" id="5_goal"]
 [ext_resource type="PackedScene" path="res://scenes/trampoline/trampoline.tscn" id="6_trampoline"]
 [ext_resource type="PackedScene" path="res://scenes/ferris_wheel/ferris_wheel.tscn" id="7_ferris_wheel"]
+[ext_resource type="PackedScene" path="res://scenes/carousel/carousel.tscn" id="8_carousel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(2200, 32)
@@ -239,6 +240,9 @@ bounce_speed = 600.0
 
 [node name="Trampoline4" parent="." instance=ExtResource("6_trampoline")]
 position = Vector2(1300, 238)
+
+[node name="Carousel" parent="." instance=ExtResource("8_carousel")]
+position = Vector2(1500, 238)
 
 [node name="Goal" parent="." instance=ExtResource("5_goal")]
 position = Vector2(1860, 238)

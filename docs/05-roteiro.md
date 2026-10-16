@@ -131,3 +131,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   uma roda-gigante (`scenes/ferris_wheel/`) que gira devagar e leva o gato
   nas cadeirinhas, e camas elásticas (`scenes/trampoline/`) que jogam o gato
   bem alto. A bandeira fica na frente do castelo, no fim.
+- [x] 2026-10-16: um carrossel no parque. Fica na fase 16, antes do castelo
+  (`scenes/carousel/`): quatro cavalinhos coloridos que giram e sobem e
+  descem; o gato pode montar num cavalinho e ir junto.

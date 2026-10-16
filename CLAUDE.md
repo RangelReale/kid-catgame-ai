@@ -28,7 +28,8 @@ balões. Na décima terceira, dentro do castelo, duas princesas pegam o gato
 no colo. Na décima quarta, no Brasil, a foto com as princesas faz a tela
 piscar. Na décima quinta, no parque, um monstro gigante tem cinco de vida;
 vencido, a bandeira aparece. Na décima sexta, o gato brinca no parque numa
-roda-gigante que gira com ele e em camas elásticas. As teclas de 1 a 9 e o 0 pulam direto
+roda-gigante que gira com ele, num carrossel de cavalinhos e em camas
+elásticas. As teclas de 1 a 9 e o 0 pulam direto
 para as fases de 1 a 10. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
