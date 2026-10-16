@@ -21,7 +21,8 @@ fácil, com um ratinho num disco voador e, no fim, um ratão com barra de
 vida: três pulos em cima dele fazem a bandeira aparecer. A oitava é no céu: o gato
 voa livre e desvia de passarinhos; se um encostar nele, a fase recomeça. A nona é o gato descendo do céu, de
 nuvem em nuvem, até a grama. A décima é dentro de um avião: esbarrar numa
-mala faz a fase recomeçar. Uma bandeira no fim de
+mala faz a fase recomeçar. As teclas de 1 a 9 e o 0 pulam direto para as
+fases de 1 a 10. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e

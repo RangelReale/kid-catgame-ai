@@ -13,6 +13,15 @@ func _ready() -> void:
 		_load_level(0)
 
 
+## The number keys jump straight to a level, to test levels quickly: 1 is the
+## first level and 0 is the tenth.
+func _unhandled_input(event: InputEvent) -> void:
+	for index in mini(levels.size(), 10):
+		if event.is_action_pressed("go_to_level_%d" % (index + 1)):
+			_load_level.call_deferred(index)
+			return
+
+
 func _load_level(index: int) -> void:
 	if _level != null:
 		_level.queue_free()

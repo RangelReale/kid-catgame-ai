@@ -88,3 +88,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   de novo e tem que entrar no avião. É a fase 10: o gato sobe a escada, entra
   no avião e anda pelo corredor entre as poltronas. Se ele esbarrar numa
   mala (`scenes/suitcase/`), a fase recomeça do lado de fora do avião.
+- [x] 2026-10-16: um jeito fácil de testar as fases: apertar um número pula
+  direto para aquela fase. As teclas 1 a 9 levam às fases 1 a 9, e a tecla
+  0 leva à fase 10 (ações `go_to_level_1` a `go_to_level_10`, no teclado
+  normal e no numérico).
