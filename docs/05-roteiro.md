@@ -42,11 +42,11 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
 - [x] 2026-10-15: som engraçado de pulo.
-- [ ] 2026-10-15: 20 fases. Feitas 11: a fase 1, de chão verde, a fase 2,
+- [ ] 2026-10-15: 20 fases. Feitas 12: a fase 1, de chão verde, a fase 2,
   de chão de areia, a fase 3, a praia, a fase 4, o fundo do mar, a fase 5,
   a sala de computadores, a fase 6, a fuga do homem bravo, a fase 7, a
-  floresta, a fase 8, o céu, a fase 9, a descida, a fase 10, o avião, e a
-  fase 11, o voo. Uma bandeira no fim de cada fase leva à próxima, e
+  floresta, a fase 8, o céu, a fase 9, a descida, a fase 10, o avião, a
+  fase 11, o voo, e a fase 12, o parque com castelo. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
 - [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
@@ -101,3 +101,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   avião para, o gato some da janela e aparece no colo de um homem sorridente
   (`scenes/friendly_man/`) ao lado do avião. Uns segundos depois, vem a fase
   seguinte.
+- [x] 2026-10-16: depois do avião, o moço leva o gato para a Disney, numa
+  fase muito mais fácil. Para não usar a marca, virou um parque com um
+  castelo cor-de-rosa e balões. É a fase 12: duas telas, sem inimigos, com a
+  bandeira na frente do castelo.
