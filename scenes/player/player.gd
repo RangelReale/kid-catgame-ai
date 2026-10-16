@@ -35,6 +35,7 @@ var _air_jumps_left: int = 0
 
 
 func _ready() -> void:
+	add_to_group("player")
 	for part: CanvasItem in [$Visual/LegBackLeft, $Visual/LegBackRight, $Visual/LegFrontLeft, $Visual/LegFrontRight, $Visual/Tail]:
 		part.visible = not mermaid
 	$Visual/MermaidTail.visible = mermaid

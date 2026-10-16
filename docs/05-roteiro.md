@@ -42,9 +42,9 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
 - [x] 2026-10-15: som engraçado de pulo.
-- [ ] 2026-10-15: 20 fases. Feitas 5: a fase 1, de chão verde, a fase 2,
-  de chão de areia, a fase 3, a praia, a fase 4, o fundo do mar, e a fase 5,
-  a sala de computadores. Uma bandeira no fim de cada fase leva à próxima, e
+- [ ] 2026-10-15: 20 fases. Feitas 6: a fase 1, de chão verde, a fase 2,
+  de chão de areia, a fase 3, a praia, a fase 4, o fundo do mar, a fase 5,
+  a sala de computadores, e a fase 6, a fuga do homem bravo. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
 - [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
@@ -60,3 +60,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-16: o gato sai da água e invade uma sala de computadores. É a
   fase 5: começa no mar raso, passa pela areia e entra numa sala com mesas,
   computadores de telas coloridas e servidores com luzinhas.
+- [x] 2026-10-16: um homem bravo quer que o gato pague pelo que fez, e o gato
+  foge até o fim da sala de computadores. É a fase 6. O homem bravo
+  (`scenes/angry_man/`) espera um pouco e anda atrás do gato, mais devagar que
+  ele. Se ele alcançar o gato, a fase começa de novo, sem susto e sem dor.

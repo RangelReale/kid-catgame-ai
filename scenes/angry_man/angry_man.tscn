@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/angry_man/angry_man.gd" id="1_angry_man"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_man"]
+size = Vector2(14, 40)
+
+[node name="AngryMan" type="Area2D"]
+script = ExtResource("1_angry_man")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="LegBack" type="Polygon2D" parent="Visual"]
+color = Color(0.2, 0.25, 0.45, 1)
+polygon = PackedVector2Array(-6, -16, -1, -16, -1, 0, -6, 0)
+
+[node name="LegFront" type="Polygon2D" parent="Visual"]
+color = Color(0.2, 0.25, 0.45, 1)
+polygon = PackedVector2Array(1, -16, 6, -16, 6, 0, 1, 0)
+
+[node name="Shoes" type="Polygon2D" parent="Visual"]
+color = Color(0.3, 0.2, 0.15, 1)
+polygon = PackedVector2Array(-7, -2, 9, -2, 9, 0, -7, 0)
+
+[node name="Shirt" type="Polygon2D" parent="Visual"]
+color = Color(0.95, 0.95, 0.95, 1)
+polygon = PackedVector2Array(-8, -32, 8, -32, 8, -16, -8, -16)
+
+[node name="Tie" type="Polygon2D" parent="Visual"]
+color = Color(0.9, 0.25, 0.3, 1)
+polygon = PackedVector2Array(-1, -32, 1, -32, 2, -21, 0, -19, -2, -21)
+
+[node name="Arm" type="Polygon2D" parent="Visual"]
+color = Color(0.95, 0.95, 0.95, 1)
+polygon = PackedVector2Array(4, -30, 15, -26, 14, -23, 4, -26)
+
+[node name="Hand" type="Polygon2D" parent="Visual"]
+color = Color(0.98, 0.78, 0.65, 1)
+polygon = PackedVector2Array(14, -27, 18, -26, 17, -22, 13, -23)
+
+[node name="Head" type="Polygon2D" parent="Visual"]
+color = Color(0.98, 0.7, 0.6, 1)
+polygon = PackedVector2Array(-6, -44, 6, -44, 7, -38, 6, -32, -6, -32, -7, -38)
+
+[node name="Hair" type="Polygon2D" parent="Visual"]
+color = Color(0.35, 0.25, 0.2, 1)
+polygon = PackedVector2Array(-7, -42, -5, -46, 5, -46, 7, -42, 7, -40, -7, -40)
+
+[node name="Eyebrow" type="Polygon2D" parent="Visual"]
+color = Color(0.25, 0.15, 0.1, 1)
+polygon = PackedVector2Array(-1, -39, 5, -37, 5, -36, -1, -38)
+
+[node name="Eye" type="Polygon2D" parent="Visual"]
+color = Color(0.15, 0.1, 0.15, 1)
+polygon = PackedVector2Array(2, -36, 4, -36, 4, -34, 2, -34)
+
+[node name="Mouth" type="Polygon2D" parent="Visual"]
+color = Color(0.15, 0.1, 0.15, 1)
+polygon = PackedVector2Array(1, -32.5, 5, -32.5, 5, -33.5, 1, -33.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_man")
