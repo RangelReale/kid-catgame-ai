@@ -8,7 +8,7 @@ gato tem corpo arco-íris, patas, rabo e cabeça cor-de-rosa com orelhas, olho
 e boca, e asas. Ele anda e pula, com cambalhota, sobre um chão verde. No
 ar, bate as asas para subir mais, até três vezes antes de pousar. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
-câmera segue o gato. No céu, um sol sorridente gira os raios devagar. O próximo passo são os monstrinhos (veja "Ideias da
+câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. O próximo passo são os monstrinhos (veja "Ideias da
 filha") e depois o marco 4. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças

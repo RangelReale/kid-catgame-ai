@@ -23,6 +23,7 @@ scenes/
   player/            o gato
   levels/            uma cena por fase
   sun/               o sol do céu, que fica parado na tela
+  cloud/             uma nuvem do céu, que passa devagar pela tela
   objects/           peças reutilizáveis: coletável, plataforma, chegada
   ui/                telas e botões
 assets/

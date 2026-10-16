@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/sun/sun.tscn" id="2_sun"]
+[ext_resource type="PackedScene" path="res://scenes/cloud/cloud.tscn" id="3_cloud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(2400, 32)
@@ -25,6 +26,17 @@ layer = -1
 
 [node name="Sun" parent="Sky" instance=ExtResource("2_sun")]
 position = Vector2(420, 52)
+
+[node name="Cloud1" parent="Sky" instance=ExtResource("3_cloud")]
+position = Vector2(80, 45)
+scale = Vector2(1.2, 1.2)
+
+[node name="Cloud2" parent="Sky" instance=ExtResource("3_cloud")]
+position = Vector2(230, 85)
+scale = Vector2(0.8, 0.8)
+
+[node name="Cloud3" parent="Sky" instance=ExtResource("3_cloud")]
+position = Vector2(340, 35)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(960, 254)
