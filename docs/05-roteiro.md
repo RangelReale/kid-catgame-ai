@@ -42,12 +42,12 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   matar". Sem violência: o gato pula em cima deles e eles somem num "puf"
   de estrelinhas, sem dor e sem morte.
 - [x] 2026-10-15: som engraçado de pulo.
-- [ ] 2026-10-15: 20 fases. Feitas 13: a fase 1, de chão verde, a fase 2,
+- [ ] 2026-10-15: 20 fases. Feitas 15: a fase 1, de chão verde, a fase 2,
   de chão de areia, a fase 3, a praia, a fase 4, o fundo do mar, a fase 5,
   a sala de computadores, a fase 6, a fuga do homem bravo, a fase 7, a
   floresta, a fase 8, o céu, a fase 9, a descida, a fase 10, o avião, a
-  fase 11, o voo, a fase 12, o parque com castelo, e a fase 13, dentro do
-  castelo. Uma bandeira no fim de cada fase leva à próxima, e
+  fase 11, o voo, a fase 12, o parque com castelo, a fase 13, dentro do
+  castelo, a fase 14, a foto no Brasil, e a fase 15, o monstro gigante. Uma bandeira no fim de cada fase leva à próxima, e
   depois da última o jogo volta à primeira. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
 - [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
@@ -112,4 +112,16 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   sem marca; quando o gato chega, uma delas pega ele no colo e, depois de um
   tempinho, o jogo segue.
 - [ ] 2026-10-16: depois das princesas, voltar de avião para o Brasil para
-  tirar uma foto, voltar para o parque e se divertir nos brinquedos.
+  tirar uma foto, voltar para o parque e se divertir nos brinquedos. A foto
+  já entrou (fase 14); faltam a viagem de avião e os brinquedos.
+- [x] 2026-10-16: no Brasil, tirar uma foto com as princesas. É a fase 14:
+  uma praia com morros verdes, coqueiros e a bandeira do Brasil. Quando o
+  gato chega nas princesas, uma pega ele no colo e a tela pisca branca, como
+  o flash de uma foto (`photo_flash` em `scenes/princesses/`).
+- [x] 2026-10-16: de volta ao parque, onde o gato passou a morar, aparece um
+  monstro gigante; vencer o monstro é ganhar o jogo. Ela pediu "matar"; sem
+  violência, o gato pula em cima dele. É a fase 15: o parque do castelo, com
+  um monstro roxo de um olho só (`scenes/giant_monster/`, que usa o script do
+  ratão), com cinco de vida. Vencido, a bandeira aparece.
+- [ ] 2026-10-16: quando vence o monstro gigante, o jogo acaba. Falta uma
+  tela de festa no fim; por enquanto, o jogo volta para a fase 1.

@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/big_rat/big_rat.gd" id="1_big_rat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_monster"]
+size = Vector2(70, 60)
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(1, 0.9, 0.3, 1, 1, 0.9, 0.3, 0)
+
+[node name="GiantMonster" type="Area2D"]
+script = ExtResource("1_big_rat")
+speed = 50.0
+walk_distance = 120.0
+max_health = 5
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="FootBack" type="Polygon2D" parent="Visual"]
+color = Color(0.45, 0.25, 0.6, 1)
+polygon = PackedVector2Array(-26, -8, -10, -8, -8, 0, -28, 0)
+
+[node name="FootFront" type="Polygon2D" parent="Visual"]
+color = Color(0.45, 0.25, 0.6, 1)
+polygon = PackedVector2Array(10, -8, 26, -8, 28, 0, 8, 0)
+
+[node name="HornLeft" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.7, 0.3, 1)
+polygon = PackedVector2Array(-22, -58, -28, -76, -12, -62)
+
+[node name="HornRight" type="Polygon2D" parent="Visual"]
+color = Color(1, 0.7, 0.3, 1)
+polygon = PackedVector2Array(12, -62, 28, -76, 22, -58)
+
+[node name="Body" type="Polygon2D" parent="Visual"]
+color = Color(0.6, 0.35, 0.8, 1)
+polygon = PackedVector2Array(38.0, -34.0, 36.1, -24.1, 30.7, -15.2, 22.3, -8.1, 11.7, -3.6, 0.0, -2.0, -11.7, -3.6, -22.3, -8.1, -30.7, -15.2, -36.1, -24.1, -38.0, -34.0, -36.1, -43.9, -30.7, -52.8, -22.3, -59.9, -11.7, -64.4, -0.0, -66.0, 11.7, -64.4, 22.3, -59.9, 30.7, -52.8, 36.1, -43.9)
+
+[node name="Belly" type="Polygon2D" parent="Visual"]
+color = Color(0.78, 0.6, 0.92, 1)
+polygon = PackedVector2Array(22.0, -20.0, 20.9, -15.1, 17.8, -10.6, 12.9, -7.1, 6.8, -4.8, 0.0, -4.0, -6.8, -4.8, -12.9, -7.1, -17.8, -10.6, -20.9, -15.1, -22.0, -20.0, -20.9, -24.9, -17.8, -29.4, -12.9, -32.9, -6.8, -35.2, -0.0, -36.0, 6.8, -35.2, 12.9, -32.9, 17.8, -29.4, 20.9, -24.9)
+
+[node name="EyeWhite" type="Polygon2D" parent="Visual"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(19.0, -46.0, 18.5, -42.9, 16.9, -40.1, 14.5, -37.9, 11.4, -36.5, 8.0, -36.0, 4.6, -36.5, 1.5, -37.9, -0.9, -40.1, -2.5, -42.9, -3.0, -46.0, -2.5, -49.1, -0.9, -51.9, 1.5, -54.1, 4.6, -55.5, 8.0, -56.0, 11.4, -55.5, 14.5, -54.1, 16.9, -51.9, 18.5, -49.1)
+
+[node name="Pupil" type="Polygon2D" parent="Visual"]
+color = Color(0.15, 0.1, 0.15, 1)
+polygon = PackedVector2Array(16.0, -45.0, 15.2, -42.6, 13.2, -41.2, 10.8, -41.2, 8.8, -42.6, 8.0, -45.0, 8.8, -47.4, 10.8, -48.8, 13.2, -48.8, 15.2, -47.4)
+
+[node name="Eyebrow" type="Polygon2D" parent="Visual"]
+color = Color(0.35, 0.18, 0.45, 1)
+polygon = PackedVector2Array(-4, -60, 20, -54, 20, -51, -4, -57)
+
+[node name="Mouth" type="Polygon2D" parent="Visual"]
+color = Color(0.35, 0.15, 0.3, 1)
+polygon = PackedVector2Array(4, -30, 26, -30, 24, -26, 6, -26)
+
+[node name="Tooth" type="Polygon2D" parent="Visual"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(10, -30, 14, -30, 12, -27)
+
+[node name="HealthBar" type="Node2D" parent="."]
+position = Vector2(-30, -92)
+
+[node name="Back" type="Polygon2D" parent="HealthBar"]
+color = Color(0.25, 0.2, 0.25, 0.8)
+polygon = PackedVector2Array(-1, -1, 61, -1, 61, 6, -1, 6)
+
+[node name="Fill" type="Polygon2D" parent="HealthBar"]
+color = Color(1, 0.35, 0.45, 1)
+polygon = PackedVector2Array(0, 0, 60, 0, 60, 5, 0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_monster")
+
+[node name="Poof" type="CPUParticles2D" parent="."]
+position = Vector2(0, -34)
+emitting = false
+amount = 50
+lifetime = 1.0
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 100.0
+initial_velocity_max = 180.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_fade")
