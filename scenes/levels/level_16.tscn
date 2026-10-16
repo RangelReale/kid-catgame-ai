@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" path="res://scenes/carousel/carousel.tscn" id="8_carousel"]
 [ext_resource type="PackedScene" path="res://scenes/roller_coaster/roller_coaster.tscn" id="9_roller_coaster"]
 [ext_resource type="PackedScene" path="res://scenes/drop_tower/drop_tower.tscn" id="10_drop_tower"]
+[ext_resource type="PackedScene" path="res://scenes/fishing_booth/fishing_booth.tscn" id="11_fishing_booth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
-size = Vector2(3200, 32)
+size = Vector2(3500, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
 size = Vector2(16, 1200)
@@ -32,7 +33,7 @@ position = Vector2(360, 30)
 scale = Vector2(0.8, 0.8)
 
 [node name="Castle" type="Node2D" parent="."]
-position = Vector2(2740, 238)
+position = Vector2(3040, 238)
 
 [node name="Wall" type="Polygon2D" parent="Castle"]
 color = Color(1, 0.8, 0.88, 1)
@@ -200,17 +201,17 @@ color = Color(0.4, 0.7, 1, 1)
 polygon = PackedVector2Array(0, -10, 6, -8, 8, -2, 6, 4, 1, 8, -1, 8, -6, 4, -8, -2, -6, -8)
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(1440, 254)
+position = Vector2(1590, 254)
 
 [node name="Visual" type="Node2D" parent="Floor"]
 
 [node name="Grass" type="Polygon2D" parent="Floor/Visual"]
 color = Color(0.45, 0.8, 0.4, 1)
-polygon = PackedVector2Array(-1600, -16, 1600, -16, 1600, 400, -1600, 400)
+polygon = PackedVector2Array(-1750, -16, 1750, -16, 1750, 400, -1750, 400)
 
 [node name="Path" type="Polygon2D" parent="Floor/Visual"]
 color = Color(1, 0.9, 0.65, 1)
-polygon = PackedVector2Array(-1600, -16, 1600, -16, 1600, -6, -1600, -6)
+polygon = PackedVector2Array(-1750, -16, 1750, -16, 1750, -6, -1750, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_floor")
@@ -222,7 +223,7 @@ position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_wall")
 
 [node name="WallRight" type="StaticBody2D" parent="."]
-position = Vector2(2928, 0)
+position = Vector2(3228, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
 shape = SubResource("RectangleShape2D_wall")
@@ -252,14 +253,17 @@ position = Vector2(1650, 238)
 [node name="DropTower" parent="." instance=ExtResource("10_drop_tower")]
 position = Vector2(2450, 238)
 
+[node name="FishingBooth" parent="." instance=ExtResource("11_fishing_booth")]
+position = Vector2(2650, 238)
+
 [node name="Goal" parent="." instance=ExtResource("5_goal")]
-position = Vector2(2860, 238)
+position = Vector2(3160, 238)
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(60, 238)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
-limit_right = 2920
+limit_right = 3220
 limit_bottom = 270
 position_smoothing_enabled = true

@@ -29,7 +29,8 @@ no colo. Na décima quarta, no Brasil, a foto com as princesas faz a tela
 piscar. Na décima quinta, no parque, um monstro gigante tem cinco de vida;
 vencido, a bandeira aparece. Na décima sexta, o gato brinca no parque numa
 roda-gigante que gira com ele, num carrossel de cavalinhos, em camas
-elásticas, numa montanha-russa e numa torre que sobe e desce. As teclas de 1 a 9 e o 0 pulam direto
+elásticas, numa montanha-russa, numa torre que sobe e desce e numa pescaria, onde
+encostar num peixinho faz ele pular da água. As teclas de 1 a 9 e o 0 pulam direto
 para as fases de 1 a 10; com Ctrl, para as fases de 11 a 20. As teclas + e -
 vão para a próxima fase e para a anterior. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8

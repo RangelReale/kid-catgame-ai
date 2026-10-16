@@ -146,3 +146,8 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   junto. A "torre do terror" virou uma torre alta e alegre
   (`scenes/drop_tower/`), sem susto: a cadeirinha sobe devagar, espera lá
   em cima e desce rápido, mas não demais.
+- [x] 2026-10-16: uma pescaria no parque. Fica na fase 16, entre a torre e
+  o castelo (`scenes/fishing_booth/`): uma barraca listrada com bandeirinhas
+  e uma bacia com quatro peixinhos (`scenes/fish/`). Quando o gato encosta
+  num peixinho, ele pula da água num punhado de estrelinhas e volta depois
+  de um tempo. Ainda não conta os peixes pegos.
