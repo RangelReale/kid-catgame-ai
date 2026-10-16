@@ -82,3 +82,18 @@ polygon = PackedVector2Array(24, 0, 22.2, 9.2, 17, 17, 9.2, 22.2, 0, 24, -9.2, 2
 [node name="Arrow" type="Polygon2D" parent="TouchButtons/RightCorner/Jump/Visual"]
 color = Color(0.35, 0.25, 0.45, 0.8)
 polygon = PackedVector2Array(0, -11, 11, 1, 4, 1, 4, 10, -4, 10, -4, 1, -11, 1)
+
+[node name="Down" type="TouchScreenButton" parent="TouchButtons/RightCorner"]
+position = Vector2(-100, -36)
+shape = SubResource("CircleShape2D_button")
+action = "move_down"
+
+[node name="Visual" type="Node2D" parent="TouchButtons/RightCorner/Down"]
+
+[node name="Circle" type="Polygon2D" parent="TouchButtons/RightCorner/Down/Visual"]
+color = Color(1, 1, 1, 0.5)
+polygon = PackedVector2Array(24, 0, 22.2, 9.2, 17, 17, 9.2, 22.2, 0, 24, -9.2, 22.2, -17, 17, -22.2, 9.2, -24, 0, -22.2, -9.2, -17, -17, -9.2, -22.2, 0, -24, 9.2, -22.2, 17, -17, 22.2, -9.2)
+
+[node name="Arrow" type="Polygon2D" parent="TouchButtons/RightCorner/Down/Visual"]
+color = Color(0.35, 0.25, 0.45, 0.8)
+polygon = PackedVector2Array(0, 11, 11, -1, 4, -1, 4, -10, -4, -10, -4, -1, -11, -1)

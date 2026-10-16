@@ -13,11 +13,11 @@ quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
 pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
 um monstrinho de lado não faz nada. Há quatro fases. A terceira é uma praia com mar raso no fim. A quarta é o
-fundo do mar, onde o gato tem cauda de sereia e sobe nadando enquanto o
-jogador segura pular. Uma bandeira no fim de
+fundo do mar, onde o gato tem cauda de sereia e nada: sobe com pular, desce
+com `move_down` e fica parado na altura quando nada é apertado. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
-controle, três botões redondos nos cantos de baixo fazem o gato andar e
+controle, quatro botões redondos nos cantos de baixo fazem o gato andar e
 pular (início do marco 6). O jogo também roda no iPad. A filha pediu 20 fases. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
@@ -91,7 +91,7 @@ Resumo de [docs/03-arquitetura.md](docs/03-arquitetura.md):
   não usa pull requests.
 - Não edite a pasta `.godot/` nem os arquivos `.import`. O Godot os gera.
 - Fases são dados: cada fase é um `.tscn`. Não monte fases por código.
-- Leia entradas por ações (`move_left`, `move_right`, `jump`), nunca por
+- Leia entradas por ações (`move_left`, `move_right`, `move_down`, `jump`), nunca por
   teclas.
 - Mantenha a parte visual de cada cena em um nó `Visual` separado, para que a
   troca de retângulos por desenhos não mexa na lógica.

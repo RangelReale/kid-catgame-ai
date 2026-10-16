@@ -53,3 +53,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   O gato troca as patas e o rabo por uma cauda de sereia e nada.
 - [x] 2026-10-16: na fase da água, o gato tem que ir para cima. Segurando
   pular, o gato sereia sobe nadando; soltando, ele desce devagar.
+- [x] 2026-10-16: no mar, o gato sobe com o botão de cima, fica lá em cima e
+  desce com o botão de descer. Entrou a ação `move_down` (seta para baixo,
+  S, direcional para baixo) e um botão de toque com seta para baixo.
