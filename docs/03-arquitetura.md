@@ -22,6 +22,7 @@ scenes/
   main.tscn          a cena que o jogo abre primeiro
   player/            o gato
   levels/            uma cena por fase
+  sun/               o sol do céu, que fica parado na tela
   objects/           peças reutilizáveis: coletável, plataforma, chegada
   ui/                telas e botões
 assets/
