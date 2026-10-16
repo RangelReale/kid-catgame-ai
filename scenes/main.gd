@@ -14,10 +14,17 @@ func _ready() -> void:
 
 
 ## The number keys jump straight to a level, to test levels quickly: 1 is the
-## first level and 0 is the tenth.
+## first level and 0 is the tenth. With Ctrl held, 1 is the eleventh and 0 is
+## the twentieth. Plus and minus go to the next and the previous level.
 func _unhandled_input(event: InputEvent) -> void:
-	for index in mini(levels.size(), 10):
-		if event.is_action_pressed("go_to_level_%d" % (index + 1)):
+	if event.is_action_pressed("go_to_next_level"):
+		_load_level.call_deferred((_level_index + 1) % levels.size())
+		return
+	if event.is_action_pressed("go_to_previous_level"):
+		_load_level.call_deferred(posmod(_level_index - 1, levels.size()))
+		return
+	for index in mini(levels.size(), 20):
+		if event.is_action_pressed("go_to_level_%d" % (index + 1), false, true):
 			_load_level.call_deferred(index)
 			return
 

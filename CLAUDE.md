@@ -30,7 +30,8 @@ piscar. Na décima quinta, no parque, um monstro gigante tem cinco de vida;
 vencido, a bandeira aparece. Na décima sexta, o gato brinca no parque numa
 roda-gigante que gira com ele, num carrossel de cavalinhos e em camas
 elásticas. As teclas de 1 a 9 e o 0 pulam direto
-para as fases de 1 a 10. Uma bandeira no fim de
+para as fases de 1 a 10; com Ctrl, para as fases de 11 a 20. As teclas + e -
+vão para a próxima fase e para a anterior. Uma bandeira no fim de
 cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
 pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e

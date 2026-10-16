@@ -134,3 +134,9 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-16: um carrossel no parque. Fica na fase 16, antes do castelo
   (`scenes/carousel/`): quatro cavalinhos coloridos que giram e sobem e
   descem; o gato pode montar num cavalinho e ir junto.
+- [x] 2026-10-16: pular direto para as fases depois da 10. Ctrl com um
+  número leva às fases 11 a 20 (Ctrl+1 é a 11 e Ctrl+0 é a 20; ações
+  `go_to_level_11` a `go_to_level_20`). A tecla + vai para a próxima fase e
+  a tecla - volta para a anterior (`go_to_next_level` e
+  `go_to_previous_level`, também no teclado numérico e com Page Down e Page
+  Up).
