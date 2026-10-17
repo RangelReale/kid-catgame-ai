@@ -8,6 +8,7 @@ Leia nesta ordem:
 4. [Como trabalhamos](04-como-trabalhamos.md): como pai, filha e Claude fazem
    o jogo juntos.
 5. [Roteiro](05-roteiro.md): os passos do jogo, do mais simples ao completo.
+6. [Histórico](06-historico.md): tudo o que já mudou no jogo, em ordem.
 
 O arquivo [CLAUDE.md](../CLAUDE.md), na raiz, traz as instruções que o Claude
 segue neste repositório.
