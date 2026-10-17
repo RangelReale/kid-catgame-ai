@@ -4,7 +4,8 @@ Tudo o que mudou no jogo, do começo até hoje, na ordem em que aconteceu.
 Commits seguidos sobre o mesmo assunto aparecem juntos em um item. Os
 códigos entre parênteses são os commits.
 
-Acrescente um item novo no fim a cada mudança.
+Acrescente um item novo no fim a cada mudança, aqui e na [versão para
+ouvir](07-historico-para-ouvir.md).
 
 ## 13 de outubro de 2026
 
