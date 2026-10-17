@@ -1,12 +1,14 @@
 # Vídeo de promoção
 
-Estes arquivos refazem o vídeo de promoção de 30 segundos,
+Estes arquivos refazem o vídeo de promoção de 46 segundos,
 `build/promo/jogo_do_gato_promo.mp4`.
 
-- `autopilot.gd`: joga sozinho. O gato anda para a direita, pula nos
-  monstrinhos, passa por cima das caixas e bate as asas três vezes em cada
-  fase.
-- `filter.txt`: o filtro do ffmpeg. Ele corta o vídeo em 30 segundos, põe
+- `autopilot.gd`: joga sozinho. Ele mostra alguns segundos de várias
+  fases, uma depois da outra. A lista `CLIPS` diz qual fase entra, por
+  quanto tempo e onde o gato começa. O gato anda para a direita, pula nos
+  monstrinhos, nada como sereia, voa longe dos passarinhos e anda na
+  roda-gigante e na montanha-russa.
+- `filter.txt`: o filtro do ffmpeg. Ele corta o vídeo em 46,5 segundos, põe
   os títulos e mistura a música com o som do jogo.
 
 O arquivo `tools/.gdignore` faz o Godot ignorar esta pasta. Assim, o script
@@ -22,14 +24,15 @@ não entra no jogo exportado.
 Rode a partir da raiz do repositório. No Windows, use `godot_console` no
 lugar de `godot`.
 
-1. Teste o piloto automático sem gravar. A saída deve mostrar um `POP` para
-   cada monstrinho e a troca de `Level01` para `Level02`:
+1. Teste o piloto automático sem gravar. A saída deve mostrar uma linha
+   `clip` para cada trecho, um `POP` para cada monstrinho e um `ride` para
+   cada brinquedo:
 
    ```sh
    godot --headless --path . --fixed-fps 60 -s tools/promo/autopilot.gd
    ```
 
-2. Grave a jogada. O Godot abre uma janela e grava 31 segundos:
+2. Grave a jogada. O Godot abre uma janela e grava 46,5 segundos:
 
    ```sh
    mkdir -p build/promo
@@ -53,16 +56,17 @@ lugar de `godot`.
 
    ```sh
    cd build/promo
-   ffmpeg -y -i gameplay.avi -i music.wav -/filter_complex ../../tools/promo/filter.txt -map "[v]" -map "[a]" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart jogo_do_gato_promo.mp4
+   ffmpeg -y -i gameplay.avi -stream_loop 1 -i music.wav -/filter_complex ../../tools/promo/filter.txt -map "[v]" -map "[a]" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart jogo_do_gato_promo.mp4
    cd ../..
    ```
 
 ## Quando o jogo mudar
 
-Os títulos de `filter.txt` aparecem em segundos fixos. Eles combinam com o
-que o piloto automático faz hoje: o triplo bater de asas aos 3 s, os
-monstrinhos entre 6 s e 15 s, e a fase 2 a partir de 16 s. Se as fases
-mudarem, rode o passo 1. Depois, ajuste os tempos de `enable='between(t,...)'`
+Os títulos de `filter.txt` aparecem em segundos fixos. Cada título combina
+com um trecho de `CLIPS`: a fase 1 até 9 s, a praia, a sereia, o ratão, o
+céu, o avião, as princesas, o monstro gigante, a roda-gigante, a
+montanha-russa e o fim aos 42,5 s. Se mudar a lista `CLIPS`, rode o passo 1.
+Depois, ajuste os tempos de `enable='between(t,...)'` e os tempos do fim
 para os novos momentos da saída.
 
 ## Música
@@ -71,5 +75,5 @@ para os novos momentos da saída.
 <https://opengameart.org/content/cat-song>. A licença é CC0, então não é
 preciso pedir permissão. O autor pede o crédito, que já aparece no fim do
 vídeo. Ele também pede uma mensagem ou um link quando alguém usa a música.
-A música tem 27 segundos. O filtro repete o começo dela por 2,8 segundos e
-abaixa o volume até o fim.
+A música tem 27 segundos. A opção `-stream_loop 1` toca a música duas
+vezes seguidas, e o filtro abaixa o volume nos últimos 2 segundos.
