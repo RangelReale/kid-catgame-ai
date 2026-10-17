@@ -80,6 +80,12 @@ pescaria com peixinhos que pulam da água.
 
 E, por último, ficou mais fácil trocar de fase pelo teclado.
 
+## Quarto dia
+
+O vídeo do jogo ficou novo. Agora ele mostra muitas fases: a sereia, o
+ratão, o céu, o avião, as princesas, o monstro gigante, a roda-gigante e a
+montanha-russa.
+
 ## E agora?
 
 O jogo já tem dezesseis fases. Faltam quatro para chegar às vinte!

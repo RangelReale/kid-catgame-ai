@@ -82,3 +82,8 @@ ouvir](07-historico-para-ouvir.md).
   (d913ebe, 805c68f, 87130bf, fe8a154)
 - **Mais atalhos de fase.** Ctrl com número vai para as fases de 11 a 20, e
   as teclas + e - vão para a próxima fase e para a anterior. (2abb633)
+
+## 17 de outubro de 2026
+
+- **Vídeo de promoção novo.** O vídeo mostra trechos de dez fases, da
+  primeira até a montanha-russa, com um título para cada uma. (cab5c29)
