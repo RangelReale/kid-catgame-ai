@@ -215,7 +215,7 @@ atalhos no menu Iniciar e na área de trabalho.
 O APK é assinado com a chave de release do Android. A chave fica nos segredos
 do repositório no GitHub: `ANDROID_KEYSTORE_BASE64` (o arquivo em base64),
 `ANDROID_KEYSTORE_ALIAS` e `ANDROID_KEYSTORE_PASSWORD`. A cópia original fica
-no computador do pai, em `%USERPROFILE%\.android\catgame-release\`, com a
+no computador do pai, em `%USERPROFILE%\Documents\keys\android\`, com a
 senha em `catgame-release.txt`. Guarde uma cópia de segurança dessa pasta.
 Sem a chave, uma versão nova não instala por cima da antiga.
 
