@@ -85,9 +85,12 @@ Nos comandos com `--headless`, e sempre que a saída importa, use
 | Exportar para Mac | `godot --headless --path . --export-release "macOS" build/macos/catgame.zip` |
 
 Os nomes entre aspas são os nomes das predefinições em `export_presets.cfg`.
-Por enquanto, esse arquivo só tem as predefinições "Android" e "iOS". As
-outras nascem no marco 5. A pasta de destino precisa existir antes da exportação. Para
+Por enquanto, esse arquivo tem as predefinições "Android", "iOS" e
+"Windows Desktop". A do Mac nasce no marco 5. A pasta de destino precisa existir antes da exportação. Para
 instalar no Retroid Pocket 3+ ou no iPad, veja [docs/02-ambiente.md](docs/02-ambiente.md).
+
+Para publicar uma versão no GitHub, veja "Publicar uma versão" em
+[docs/02-ambiente.md](docs/02-ambiente.md).
 
 Para confirmar que o jogo abre sem erros, rode-o por alguns quadros e leia a
 saída: `godot --path . --quit-after 120` (no Windows, com `godot_console`).

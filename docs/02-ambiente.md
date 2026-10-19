@@ -195,6 +195,33 @@ Copie o conteúdo da pasta `templates/` dele para
 Um aplicativo de Mac sem assinatura mostra um aviso de segurança ao abrir.
 Por isso a versão final para Mac deve ser exportada no Mac.
 
+### Publicar uma versão
+
+O workflow `Release` (`.github/workflows/release.yml`) cria uma versão no
+GitHub com um instalador para Windows e um APK para Android. Ele só roda à
+mão:
+
+1. No GitHub, abra **Actions > Release > Run workflow**.
+2. Escreva a versão sem o `v`, por exemplo `0.3`.
+3. O workflow cria a tag `v0.3` no commit de `master` e anexa à versão os
+   arquivos `catgame-0.3-setup.exe` e `catgame-0.3.apk`.
+
+Pelo terminal: `gh workflow run release.yml -f version=0.3`.
+
+O instalador é feito com o NSIS (`tools/installer/catgame.nsi`). Ele instala
+o jogo na pasta do usuário, sem pedir permissão de administrador, e cria
+atalhos no menu Iniciar e na área de trabalho.
+
+O APK é assinado com a chave de release do Android. A chave fica nos segredos
+do repositório no GitHub: `ANDROID_KEYSTORE_BASE64` (o arquivo em base64),
+`ANDROID_KEYSTORE_ALIAS` e `ANDROID_KEYSTORE_PASSWORD`. A cópia original fica
+no computador do pai, em `%USERPROFILE%\.android\catgame-release\`, com a
+senha em `catgame-release.txt`. Guarde uma cópia de segurança dessa pasta.
+Sem a chave, uma versão nova não instala por cima da antiga.
+
+Um APK assinado com a chave de release não instala por cima de um APK de
+depuração. Desinstale a versão de depuração antes.
+
 ### Testar no celular Android
 
 1. No celular, ative as **Opções do desenvolvedor** e a **Depuração USB**.

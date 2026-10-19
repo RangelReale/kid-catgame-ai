@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, without the v (for example 0.3)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  GODOT_VERSION: 4.7.2
+  VERSION: ${{ inputs.version }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check version
+        run: |
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?$ ]]; then
+            echo "::error::Version must look like 0.3 or 0.3.1, got '$VERSION'"
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" > /dev/null; then
+            echo "::error::Tag v$VERSION already exists"
+            exit 1
+          fi
+
+      - name: Install Godot and export templates
+        run: |
+          base="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable"
+          cd "$RUNNER_TEMP"
+          curl -fsSL -o godot.zip "$base/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+          curl -fsSL -o templates.tpz "$base/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+          unzip -q templates.tpz
+          templates_dir="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+          mkdir -p "$templates_dir"
+          mv templates/* "$templates_dir"
+
+      - name: Install NSIS
+        run: sudo apt-get update && sudo apt-get install -y nsis
+
+      - name: Set version in export presets
+        run: |
+          sed -i \
+            -e "s/^version\/name=.*/version\/name=\"$VERSION\"/" \
+            -e "s/^version\/code=.*/version\/code=$GITHUB_RUN_NUMBER/" \
+            export_presets.cfg
+
+      - name: Import resources
+        run: godot --headless --path . --import
+
+      - name: Export Windows
+        run: |
+          mkdir -p build/windows
+          godot --headless --path . --export-release "Windows Desktop" build/windows/catgame.exe
+          test -f build/windows/catgame.exe
+
+      - name: Build Windows installer
+        run: |
+          mkdir -p build/release
+          makensis -DVERSION="$VERSION" -DSOURCE_DIR="$PWD/build/windows" \
+            -DOUTFILE="$PWD/build/release/catgame-$VERSION-setup.exe" tools/installer/catgame.nsi
+
+      - name: Export Android
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          GODOT_ANDROID_KEYSTORE_RELEASE_USER: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+          GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          export JAVA_HOME="$JAVA_HOME_17_X64"
+          export GODOT_ANDROID_KEYSTORE_RELEASE_PATH="$RUNNER_TEMP/release.keystore"
+          echo "$KEYSTORE_BASE64" | base64 -d > "$GODOT_ANDROID_KEYSTORE_RELEASE_PATH"
+          mkdir -p build/android
+          godot --headless --path . --export-release "Android" build/android/catgame.apk
+          cp build/android/catgame.apk "build/release/catgame-$VERSION.apk"
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$VERSION" build/release/* \
+            --target "$GITHUB_SHA" \
+            --title "Jogo do gato $VERSION" \
+            --generate-notes
