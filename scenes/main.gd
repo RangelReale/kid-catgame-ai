@@ -35,6 +35,11 @@ func _load_level(index: int) -> void:
 	_level_index = index
 	_level = levels[index].instantiate()
 	add_child(_level)
+	# With physics interpolation on, the new level's camera does not take over
+	# the screen by itself while the old level is still being freed.
+	for camera in _level.find_children("*", "Camera2D"):
+		camera.make_current()
+		camera.reset_smoothing()
 	for goal in get_tree().get_nodes_in_group("goal"):
 		if _level.is_ancestor_of(goal):
 			goal.reached.connect(_on_goal_reached)
