@@ -198,13 +198,14 @@ Por isso a versão final para Mac deve ser exportada no Mac.
 ### Publicar uma versão
 
 O workflow `Release` (`.github/workflows/release.yml`) cria uma versão no
-GitHub com um instalador para Windows e um APK para Android. Ele só roda à
-mão:
+GitHub com um instalador para Windows, um APK para Android e um zip para a
+web. Ele só roda à mão:
 
 1. No GitHub, abra **Actions > Release > Run workflow**.
 2. Escreva a versão sem o `v`, por exemplo `0.3`.
 3. O workflow cria a tag `v0.3` no commit de `master` e anexa à versão os
-   arquivos `catgame-0.3-setup.exe` e `catgame-0.3.apk`.
+   arquivos `catgame-0.3-setup.exe`, `catgame-0.3.apk` e
+   `catgame-0.3-web.zip`.
 
 Pelo terminal: `gh workflow run release.yml -f version=0.3`.
 
@@ -221,6 +222,15 @@ Sem a chave, uma versão nova não instala por cima da antiga.
 
 Um APK assinado com a chave de release não instala por cima de um APK de
 depuração. Desinstale a versão de depuração antes.
+
+O zip da web tem o `index.html` e os arquivos do jogo. Ele roda em qualquer
+hospedagem de arquivos estáticos, como o itch.io ou o Netlify, porque a
+predefinição "Web" não usa threads. Abrir o `index.html` direto do disco não
+funciona: o navegador bloqueia o jogo. Para jogar no computador, rode um
+servidor local na pasta descompactada, por exemplo `python -m http.server`, e
+abra `http://localhost:8000`. O som só toca depois do primeiro clique na
+página. No navegador, Ctrl com um número troca de aba, então os atalhos das
+fases 11 a 20 não funcionam.
 
 ### Testar no celular Android
 
