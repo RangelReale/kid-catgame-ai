@@ -12,4 +12,4 @@ func _physics_process(_delta: float) -> void:
 		if body is Player and body.velocity.y >= 0.0:
 			body.bounce(bounce_speed)
 			_mat.position.y = 3.0
-			create_tween().tween_property(_mat, "position:y", 0.0, 0.2)
+			create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS).tween_property(_mat, "position:y", 0.0, 0.2)

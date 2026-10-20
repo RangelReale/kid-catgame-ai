@@ -214,6 +214,7 @@ goal = NodePath("../Goal")
 position = Vector2(60, 238)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+process_callback = 0
 limit_left = 0
 limit_right = 1440
 limit_bottom = 270

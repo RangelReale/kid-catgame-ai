@@ -168,6 +168,7 @@ position = Vector2(60, 200)
 flying = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+process_callback = 0
 limit_left = 0
 limit_top = 0
 limit_right = 2400

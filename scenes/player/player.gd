@@ -98,6 +98,7 @@ func bounce(speed_up: float = 0.0) -> void:
 ## Puts the cat back at a spot in the level, standing still.
 func respawn(spot: Vector2) -> void:
 	global_position = spot
+	reset_physics_interpolation()
 	velocity = Vector2.ZERO
 	_flip_time = -1.0
 

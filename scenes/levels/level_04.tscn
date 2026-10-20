@@ -178,6 +178,7 @@ position = Vector2(80, 238)
 mermaid = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+process_callback = 0
 limit_left = 0
 limit_right = 1920
 limit_top = 0

@@ -80,6 +80,7 @@ position = Vector2(120, 238)
 show_on_landing = NodePath("../FriendlyMan")
 
 [node name="Camera2D" type="Camera2D" parent="Airplane"]
+process_callback = 0
 ignore_rotation = true
 limit_left = 0
 limit_right = 3400
