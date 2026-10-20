@@ -229,7 +229,9 @@ predefinição "Web" não usa threads. Abrir o `index.html` direto do disco não
 funciona: o navegador bloqueia o jogo. Para jogar no computador, rode um
 servidor local na pasta descompactada, por exemplo `python -m http.server`, e
 abra `http://localhost:8000`. O som só toca depois do primeiro clique na
-página. No navegador, Ctrl com um número troca de aba, então os atalhos das
+página. Em telas de toque, o primeiro toque põe o jogo em tela cheia e
+deitado; o script fica em `html/head_include`, na predefinição "Web". O
+iPhone não deixa páginas entrarem em tela cheia. No navegador, Ctrl com um número troca de aba, então os atalhos das
 fases 11 a 20 não funcionam.
 
 ### Testar no celular Android
