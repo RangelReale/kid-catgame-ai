@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/airplane/airplane.gd" id="1_airplane"]
 
 [node name="Airplane" type="Node2D"]
-physics_interpolation_mode = 2
 script = ExtResource("1_airplane")
 
 [node name="Visual" type="Node2D" parent="."]

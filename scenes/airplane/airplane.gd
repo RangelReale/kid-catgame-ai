@@ -35,7 +35,7 @@ func _ready() -> void:
 		show_on_landing.hide()
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _waiting >= 0.0:
 		_waiting += delta
 		if _waiting >= wait_after_landing:
