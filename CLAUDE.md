@@ -11,7 +11,10 @@ faz um "boing" (`assets/sounds/jump.wav`, gerado por código), mais agudo a
 cada batida de asa. A fase tem
 quatro telas de largura, com uma caixa, uma plataforma e um degrau, e a
 câmera segue o gato. No céu, um sol sorridente gira os raios devagar, e três nuvens passam. Três monstrinhos andam pelo chão. Quando o gato
-pula em cima de um, ele some num "puf" de estrelinhas e o gato quica. Tocar
+pula em cima de um, ele some num "puf" de estrelinhas, com som de "puf"
+(`assets/sounds/pop.wav`), e o gato quica. No ratão e no monstro gigante,
+os pulos antes do último fazem "bonk" (`assets/sounds/stomp.wav`); os dois
+sons são gerados por `tools/sounds/make_enemy_sounds.py`. Tocar
 um monstrinho de lado não faz nada. Há dezesseis fases. A terceira é uma praia com mar raso no fim. A quarta é o
 fundo do mar, onde o gato tem cauda de sereia e nada: sobe com pular, desce
 com `move_down` e fica parado na altura quando nada é apertado. A quinta

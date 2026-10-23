@@ -26,6 +26,8 @@ var _beaten: bool = false
 @onready var _visual: Node2D = $Visual
 @onready var _health_fill: Node2D = $HealthBar/Fill
 @onready var _poof: CPUParticles2D = $Poof
+@onready var _stomp_sound: AudioStreamPlayer = $StompSound
+@onready var _pop_sound: AudioStreamPlayer = $PopSound
 
 
 func _ready() -> void:
@@ -70,9 +72,12 @@ func _hit(player: Player) -> void:
 		_visual.hide()
 		$HealthBar.hide()
 		_poof.emitting = true
+		# Only the "puf" plays on the last hit, not the "bonk".
+		_pop_sound.play()
 		if goal != null:
 			goal.unlock()
 		return
+	_stomp_sound.play()
 	_visual.modulate = Color(1, 0.6, 0.6)
 	create_tween().tween_property(_visual, "modulate", Color.WHITE, hurt_cooldown)
 

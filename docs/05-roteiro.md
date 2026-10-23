@@ -162,3 +162,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-23: musiquinha simples na abertura, no estilo dos jogos de PC
   de 1984, como o Alley Cat que o pai jogava. É uma melodia nova, de bipes
   de onda quadrada, que se repete enquanto a tela de início aparece.
+- [x] 2026-10-23: som ao pular em cima dos inimigos e outro quando eles
+  explodem, sem o som de pulo junto na explosão. O pulo que ainda não vence
+  faz "bonk"; o que vence faz só um "puf" com estrelinhas tilintando.

@@ -97,3 +97,5 @@ ouvir](07-historico-para-ouvir.md).
   "Aperte um botão para voltar" pisca no fim.
 - **Música da abertura.** Uma melodia de bipes, no estilo dos PCs antigos,
   toca na tela de início.
+- **Sons dos inimigos.** Pular num inimigo faz "bonk", e vencê-lo faz um
+  "puf" com estrelinhas.
