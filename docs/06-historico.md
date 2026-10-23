@@ -99,3 +99,5 @@ ouvir](07-historico-para-ouvir.md).
   toca na tela de início.
 - **Sons dos inimigos.** Pular num inimigo faz "bonk", e vencê-lo faz um
   "puf" com estrelinhas.
+- **Teclas especiais não começam o jogo.** Volume, mídia, Shift, Ctrl, F1 a
+  F12, Esc e o botão de voltar do Android não contam como "aperte um botão".

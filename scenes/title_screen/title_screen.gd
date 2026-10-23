@@ -34,9 +34,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		start_requested.emit()
 
 
+## Actions whose keys count as a start, besides the keys that type something.
+const START_ACTIONS: Array[StringName] = [&"jump", &"move_left", &"move_right", &"move_down"]
+
+
 ## True for a real press of a key, a controller button, the mouse or a finger.
+## Special keys, like volume, media, Shift, Ctrl or the F keys, and the
+## controller's home button do not count.
 static func is_start_event(event: InputEvent) -> bool:
-	if event is InputEventKey or event is InputEventJoypadButton \
-			or event is InputEventMouseButton or event is InputEventScreenTouch:
-		return event.is_pressed() and not event.is_echo()
-	return false
+	if not event.is_pressed() or event.is_echo():
+		return false
+	if event is InputEventKey:
+		var key := event as InputEventKey
+		if key.unicode != 0 or key.keycode in [KEY_ENTER, KEY_KP_ENTER]:
+			return true
+		return START_ACTIONS.any(func(action: StringName) -> bool:
+				return event.is_action(action, true))
+	if event is InputEventJoypadButton:
+		return (event as InputEventJoypadButton).button_index != JOY_BUTTON_GUIDE
+	if event is InputEventMouseButton:
+		return (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT
+	return event is InputEventScreenTouch
