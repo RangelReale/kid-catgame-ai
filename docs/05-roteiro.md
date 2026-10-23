@@ -156,3 +156,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   botão para começar". No fim da última fase, a imagem fica sépia, aparece
   "Você venceu!" e sobem os créditos, só com "Filha" e "Pai". As fases do
   fundo ficam em `demo_levels`, em `main.tscn`.
+- [x] 2026-10-23: no fim, "aperte um botão para voltar" piscando, como na
+  tela de início, e um texto antes dos nomes dos créditos. Entrou "Feito
+  por" acima de "Filha" e "Pai".

@@ -37,7 +37,8 @@ cada uma leva à próxima (marco 8 pronto). O jogo abre numa tela de início
 com "Jogo do gato" em letras grandes e algumas fases rodando sozinhas no
 fundo, em tom sépia e sem som; qualquer botão começa a fase 1. No fim da
 última fase, a imagem para e fica sépia, aparece "Você venceu!" e sobem os
-créditos, "Filha" e "Pai"; depois, um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem
+créditos, "Feito por", "Filha" e "Pai". Depois, pisca "Aperte um botão
+para voltar", e um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e
 pular (início do marco 6). O jogo também roda no iPad. A filha pediu 20 fases. Atualize esta seção a cada marco.
 

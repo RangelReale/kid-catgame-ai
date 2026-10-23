@@ -93,3 +93,5 @@ ouvir](07-historico-para-ouvir.md).
 - **Tela de início e vitória.** O jogo abre com o nome em letras grandes
   sobre fases que rodam sozinhas, em tom sépia. No fim da última fase,
   aparecem "Você venceu!" e os créditos, "Filha" e "Pai".
+- **Créditos com título e aviso.** "Feito por" aparece antes dos nomes, e
+  "Aperte um botão para voltar" pisca no fim.
