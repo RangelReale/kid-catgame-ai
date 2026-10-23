@@ -7,6 +7,9 @@ signal start_requested
 ## Seconds the "press a button" words take to fade out and back in.
 @export var blink_duration: float = 1.2
 
+## On the web, the browser mutes all sound until the first key or click.
+static var _audio_unlocked: bool = not OS.has_feature("web")
+
 @onready var _press_label: Label = $Visual/Press
 @onready var _music: AudioStreamPlayer = $Music
 
@@ -31,6 +34,12 @@ func _update_music() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and is_start_event(event):
 		get_viewport().set_input_as_handled()
+		if not _audio_unlocked:
+			# The browser kept the tune silent until now, so this press only
+			# starts it over; the next one starts the game.
+			_audio_unlocked = true
+			_music.play()
+			return
 		start_requested.emit()
 
 

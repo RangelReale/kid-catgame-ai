@@ -41,7 +41,9 @@ com "Jogo do gato" em letras grandes e algumas fases rodando sozinhas no
 fundo, em tom sépia. Toca uma musiquinha de bipes, como nos PCs antigos
 (`assets/music/title.wav`, gerada por `tools/music/make_title_music.py`), e
 os sons das fases ficam mudos no canal `Sounds`. Qualquer botão começa a
-fase 1, menos as teclas especiais, como volume, Shift, Ctrl e F1 a F12. No fim da
+fase 1, menos as teclas especiais, como volume, Shift, Ctrl e F1 a F12. Na
+web, o navegador deixa o som mudo até o primeiro botão; por isso, lá, o
+primeiro botão liga a música e o segundo começa a fase 1. No fim da
 última fase, a imagem para e fica sépia, aparece "Você venceu!" e sobem os
 créditos, "Feito por", "Filha" e "Pai". Depois, pisca "Aperte um botão
 para voltar", e um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem
