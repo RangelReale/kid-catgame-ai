@@ -55,8 +55,9 @@ func _show_title() -> void:
 	_state = State.TITLE
 	_hud.hide()
 	_title_screen.show()
-	# The cat's "boing" would play by itself, so the sound stays off.
-	AudioServer.set_bus_mute(0, true)
+	# The cat's "boing" would play by itself, so the game sounds stay off.
+	# The title music plays on another bus.
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sounds"), true)
 	_demo_index = -1
 	_next_demo_level()
 
@@ -72,7 +73,7 @@ func _next_demo_level() -> void:
 
 func _start_game() -> void:
 	_release_demo_actions()
-	AudioServer.set_bus_mute(0, false)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sounds"), false)
 	_title_screen.hide()
 	_hud.show()
 	_state = State.PLAYING

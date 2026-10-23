@@ -35,7 +35,10 @@ para as fases de 1 a 10; com Ctrl, para as fases de 11 a 20. As teclas + e -
 vão para a próxima fase e para a anterior. Uma bandeira no fim de
 cada uma leva à próxima (marco 8 pronto). O jogo abre numa tela de início
 com "Jogo do gato" em letras grandes e algumas fases rodando sozinhas no
-fundo, em tom sépia e sem som; qualquer botão começa a fase 1. No fim da
+fundo, em tom sépia. Toca uma musiquinha de bipes, como nos PCs antigos
+(`assets/music/title.wav`, gerada por `tools/music/make_title_music.py`), e
+os sons das fases ficam mudos no canal `Sounds`. Qualquer botão começa a
+fase 1. No fim da
 última fase, a imagem para e fica sépia, aparece "Você venceu!" e sobem os
 créditos, "Feito por", "Filha" e "Pai". Depois, pisca "Aperte um botão
 para voltar", e um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem

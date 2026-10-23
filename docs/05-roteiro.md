@@ -159,3 +159,6 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
 - [x] 2026-10-23: no fim, "aperte um botão para voltar" piscando, como na
   tela de início, e um texto antes dos nomes dos créditos. Entrou "Feito
   por" acima de "Filha" e "Pai".
+- [x] 2026-10-23: musiquinha simples na abertura, no estilo dos jogos de PC
+  de 1984, como o Alley Cat que o pai jogava. É uma melodia nova, de bipes
+  de onda quadrada, que se repete enquanto a tela de início aparece.

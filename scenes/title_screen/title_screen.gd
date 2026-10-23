@@ -8,12 +8,24 @@ signal start_requested
 @export var blink_duration: float = 1.2
 
 @onready var _press_label: Label = $Visual/Press
+@onready var _music: AudioStreamPlayer = $Music
 
 
 func _ready() -> void:
 	var tween := create_tween().set_loops()
 	tween.tween_property(_press_label, "modulate:a", 0.2, blink_duration / 2.0)
 	tween.tween_property(_press_label, "modulate:a", 1.0, blink_duration / 2.0)
+	# The tune starts over each time it ends, while the title shows.
+	_music.finished.connect(_music.play)
+	visibility_changed.connect(_update_music)
+	_update_music()
+
+
+func _update_music() -> void:
+	if visible:
+		_music.play()
+	else:
+		_music.stop()
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -95,3 +95,5 @@ ouvir](07-historico-para-ouvir.md).
   aparecem "Você venceu!" e os créditos, "Filha" e "Pai".
 - **Créditos com título e aviso.** "Feito por" aparece antes dos nomes, e
   "Aperte um botão para voltar" pisca no fim.
+- **Música da abertura.** Uma melodia de bipes, no estilo dos PCs antigos,
+  toca na tela de início.
