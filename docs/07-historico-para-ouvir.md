@@ -86,6 +86,15 @@ O vídeo do jogo ficou novo. Agora ele mostra muitas fases: a sereia, o
 ratão, o céu, o avião, as princesas, o monstro gigante, a roda-gigante e a
 montanha-russa.
 
+## Quinto dia
+
+O jogo ganhou uma tela de começo! Ela mostra o nome, "Jogo do gato", bem
+grande. Atrás, o gato brinca sozinho nas fases, tudo cor de foto antiga.
+É só apertar um botão para jogar.
+
+E quando o gato termina a última fase, tudo fica dessa mesma cor, aparece
+"Você venceu!" e sobem os nomes de quem fez o jogo: Filha e Pai.
+
 ## E agora?
 
 O jogo já tem dezesseis fases. Faltam quatro para chegar às vinte!

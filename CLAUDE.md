@@ -33,8 +33,11 @@ elásticas, numa montanha-russa, numa torre que sobe e desce e numa pescaria, on
 encostar num peixinho faz ele pular da água. As teclas de 1 a 9 e o 0 pulam direto
 para as fases de 1 a 10; com Ctrl, para as fases de 11 a 20. As teclas + e -
 vão para a próxima fase e para a anterior. Uma bandeira no fim de
-cada uma leva à próxima, e depois da última o jogo volta à primeira (marco 8
-pronto). Do marco 4, falta o peixe para pegar. Em telas de toque sem
+cada uma leva à próxima (marco 8 pronto). O jogo abre numa tela de início
+com "Jogo do gato" em letras grandes e algumas fases rodando sozinhas no
+fundo, em tom sépia e sem som; qualquer botão começa a fase 1. No fim da
+última fase, a imagem para e fica sépia, aparece "Você venceu!" e sobem os
+créditos, "Filha" e "Pai"; depois, um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e
 pular (início do marco 6). O jogo também roda no iPad. A filha pediu 20 fases. Atualize esta seção a cada marco.
 

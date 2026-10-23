@@ -87,3 +87,9 @@ ouvir](07-historico-para-ouvir.md).
 
 - **Vídeo de promoção novo.** O vídeo mostra trechos de dez fases, da
   primeira até a montanha-russa, com um título para cada uma. (cab5c29)
+
+## 23 de outubro de 2026
+
+- **Tela de início e vitória.** O jogo abre com o nome em letras grandes
+  sobre fases que rodam sozinhas, em tom sépia. No fim da última fase,
+  aparecem "Você venceu!" e os créditos, "Filha" e "Pai".

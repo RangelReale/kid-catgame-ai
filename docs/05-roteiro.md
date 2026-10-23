@@ -49,7 +49,7 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   fase 11, o voo, a fase 12, o parque com castelo, a fase 13, dentro do
   castelo, a fase 14, a foto no Brasil, a fase 15, o monstro gigante, e a
   fase 16, os brinquedos do parque. Uma bandeira no fim de cada fase leva à próxima, e
-  depois da última o jogo volta à primeira. Para criar uma fase nova, copie
+  depois da última aparecem a vitória e os créditos. Para criar uma fase nova, copie
   um `level_XX.tscn` e acrescente-o à lista `levels` de `main.tscn`.
 - [x] 2026-10-16: fase da praia, com água no final. É a fase 3: areia clara
   e, no fim, um mar raso com ondinhas. O gato entra na água até a bandeira.
@@ -151,3 +151,8 @@ Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
   e uma bacia com quatro peixinhos (`scenes/fish/`). Quando o gato encosta
   num peixinho, ele pula da água num punhado de estrelinhas e volta depois
   de um tempo. Ainda não conta os peixes pegos.
+- [x] 2026-10-23: tela de início com o nome do jogo em letras grandes e
+  partes do jogo rodando sozinhas no fundo, em tom sépia, com "aperte um
+  botão para começar". No fim da última fase, a imagem fica sépia, aparece
+  "Você venceu!" e sobem os créditos, só com "Filha" e "Pai". As fases do
+  fundo ficam em `demo_levels`, em `main.tscn`.
