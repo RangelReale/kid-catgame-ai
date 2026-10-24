@@ -12,6 +12,7 @@ static var _audio_unlocked: bool = not OS.has_feature("web")
 
 @onready var _press_label: Label = $Visual/Press
 @onready var _music: AudioStreamPlayer = $Music
+@onready var _flags: Array[Node] = $Visual/Languages.get_children()
 
 
 func _ready() -> void:
@@ -22,6 +23,30 @@ func _ready() -> void:
 	_music.finished.connect(_music.play)
 	visibility_changed.connect(_update_music)
 	_update_music()
+	for flag: LanguageFlag in _flags:
+		flag.pressed.connect(_on_flag_pressed.bind(flag.locale))
+	Language.changed.connect(_update_flags)
+	_update_flags()
+
+
+func _update_flags() -> void:
+	for flag: LanguageFlag in _flags:
+		flag.selected = flag.locale == Language.current()
+
+
+func _on_flag_pressed(locale: String) -> void:
+	_unlock_audio()
+	Language.choose(locale)
+
+
+## The browser kept the tune silent until the first press, so the tune starts
+## over. Returns false when the sound was already on.
+func _unlock_audio() -> bool:
+	if _audio_unlocked:
+		return false
+	_audio_unlocked = true
+	_music.play()
+	return true
 
 
 func _update_music() -> void:
@@ -32,15 +57,29 @@ func _update_music() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if visible and is_start_event(event):
+	if not visible:
+		return
+	if event.is_action_pressed("change_language"):
 		get_viewport().set_input_as_handled()
-		if not _audio_unlocked:
-			# The browser kept the tune silent until now, so this press only
-			# starts it over; the next one starts the game.
-			_audio_unlocked = true
-			_music.play()
-			return
-		start_requested.emit()
+		_unlock_audio()
+		Language.choose_next()
+		return
+	if is_start_event(event) and not _is_on_flag(event):
+		get_viewport().set_input_as_handled()
+		# On the web, the first press only turns the sound on; the next one
+		# starts the game.
+		if not _unlock_audio():
+			start_requested.emit()
+
+
+## True when a finger touches a language flag. The flag itself takes care of
+## it, so the game does not start.
+func _is_on_flag(event: InputEvent) -> bool:
+	if not event is InputEventScreenTouch:
+		return false
+	var position := (event as InputEventScreenTouch).position
+	return _flags.any(func(flag: Node) -> bool:
+			return (flag as Control).get_global_rect().has_point(position))
 
 
 ## Actions whose keys count as a start, besides the keys that type something.
@@ -52,6 +91,8 @@ const START_ACTIONS: Array[StringName] = [&"jump", &"move_left", &"move_right", 
 ## controller's home button do not count.
 static func is_start_event(event: InputEvent) -> bool:
 	if not event.is_pressed() or event.is_echo():
+		return false
+	if event.is_action(&"change_language"):
 		return false
 	if event is InputEventKey:
 		var key := event as InputEventKey

@@ -80,6 +80,7 @@ Input Map do projeto:
 | `move_left` | Seta esquerda, A | Direcional e analógico esquerdo | Botão na tela |
 | `move_right` | Seta direita, D | Direcional e analógico esquerdo | Botão na tela |
 | `jump` | Espaço, seta para cima | Botão de baixo (`JOY_BUTTON_A`) | Botão na tela |
+| `change_language` | L | Botão de voltar (`JOY_BUTTON_BACK`) | Toque na bandeira |
 
 No Android, os botões são nós `TouchScreenButton` grandes, nos cantos de
 baixo da tela. Eles ficam em `scenes/hud/hud.tscn`, e a cena `Main` tem uma
@@ -98,6 +99,24 @@ No computador, os botões ficam escondidos. Para testá-los com o mouse, rode
 O Retroid Pocket 3+ usa as mesmas ações do controle no computador. O Android
 apresenta os botões dele como um controle sempre conectado. Por isso os
 botões de toque não aparecem nele.
+
+## Idiomas
+
+O jogo fala português do Brasil e inglês. Os textos da tela ficam em
+`assets/translations/strings.csv`, uma linha por texto, com uma chave
+(`TITLE`) e uma coluna por idioma. Nas cenas, cada `Label` guarda a chave, e
+o Godot troca pela frase do idioma em uso. O Godot gera os arquivos
+`.translation` ao importar; eles ficam fora do Git.
+
+Na primeira vez, o jogo usa o idioma do aparelho. Se o aparelho não estiver
+em português nem em inglês, usa inglês. O autoload `Language`
+(`scenes/language/language.gd`) troca o idioma e guarda a escolha em
+`user://settings.cfg`, para a próxima vez.
+
+Na tela de início, duas bandeiras no canto de cima (Brasil e Estados
+Unidos) mostram o idioma em uso. Tocar ou clicar numa bandeira troca o
+idioma, e a ação `change_language` passa para o próximo. Nenhuma das duas
+começa o jogo.
 
 ## Tela
 

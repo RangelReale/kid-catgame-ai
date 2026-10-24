@@ -48,7 +48,9 @@ primeiro botão liga a música e o segundo começa a fase 1. No fim da
 créditos, "Feito por", "Filha" e "Pai". Depois, pisca "Aperte um botão
 para voltar", e um botão volta à tela de início. Do marco 4, falta o peixe para pegar. Em telas de toque sem
 controle, quatro botões redondos nos cantos de baixo fazem o gato andar e
-pular (início do marco 6). O jogo também roda no iPad. A filha pediu 20 fases. Atualize esta seção a cada marco.
+pular (início do marco 6). O jogo também roda no iPad. O jogo fala português e
+inglês: abre no idioma do aparelho, e duas bandeiras na tela de início (ou a
+tecla L) trocam o idioma. A filha pediu 20 fases. Atualize esta seção a cada marco.
 
 ## Quem pede as mudanças
 

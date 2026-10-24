@@ -101,3 +101,9 @@ ouvir](07-historico-para-ouvir.md).
   "puf" com estrelinhas.
 - **Teclas especiais não começam o jogo.** Volume, mídia, Shift, Ctrl, F1 a
   F12, Esc e o botão de voltar do Android não contam como "aperte um botão".
+
+## 24 de outubro de 2026
+
+- **Português e inglês.** O jogo abre no idioma do aparelho. Na tela de
+  início, as bandeiras do Brasil e dos Estados Unidos trocam o idioma, e o
+  jogo lembra a escolha.
