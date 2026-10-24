@@ -1,5 +1,7 @@
 # Arquitetura
 
+[English](../docs-en/03-architecture.md)
+
 Este documento descreve como o projeto será organizado. A estrutura é criada
 aos poucos, seguindo o [roteiro](05-roteiro.md). Hoje existem o
 `project.godot`, com a tela e as ações de entrada descritas abaixo, e as cenas
@@ -33,7 +35,8 @@ assets/
   sounds/            efeitos sonoros
   music/             músicas
   fonts/             fontes
-docs/                estes documentos
+docs-pt-br/          estes documentos, em português
+docs-en/             os mesmos documentos, em inglês
 tools/               ferramentas fora do jogo; o Godot ignora a pasta
   promo/             piloto automático e filtro do ffmpeg do vídeo de promoção
 build/               jogos exportados (fora do Git)

@@ -1,5 +1,7 @@
 # Roteiro
 
+[English](../docs-en/05-roadmap.md)
+
 O jogo cresce em marcos pequenos. Ao fim de cada marco, existe algo que a
 filha pode ver ou jogar.
 

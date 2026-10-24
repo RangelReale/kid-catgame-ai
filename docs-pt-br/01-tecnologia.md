@@ -1,5 +1,7 @@
 # Tecnologia
 
+[English](../docs-en/01-technology.md)
+
 ## O que o jogo precisa
 
 - Ser um jogo 2D de plataforma lateral (side-scroller): o personagem anda e

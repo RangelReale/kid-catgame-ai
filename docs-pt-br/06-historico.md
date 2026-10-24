@@ -1,11 +1,13 @@
 # Histórico de mudanças
 
+[English](../docs-en/06-history.md)
+
 Tudo o que mudou no jogo, do começo até hoje, na ordem em que aconteceu.
 Commits seguidos sobre o mesmo assunto aparecem juntos em um item. Os
 códigos entre parênteses são os commits.
 
-Acrescente um item novo no fim a cada mudança, aqui e na [versão para
-ouvir](07-historico-para-ouvir.md).
+Acrescente um item novo no fim a cada mudança, aqui, na [versão para
+ouvir](07-historico-para-ouvir.md) e nas duas versões em inglês.
 
 ## 13 de outubro de 2026
 
@@ -107,3 +109,6 @@ ouvir](07-historico-para-ouvir.md).
 - **Português e inglês.** O jogo abre no idioma do aparelho. Na tela de
   início, as bandeiras do Brasil e dos Estados Unidos trocam o idioma, e o
   jogo lembra a escolha.
+- **Documentos em dois idiomas.** Os documentos agora existem em inglês, em
+  `docs-en`, e em português, em `docs-pt-br`. O README também tem as duas
+  versões.

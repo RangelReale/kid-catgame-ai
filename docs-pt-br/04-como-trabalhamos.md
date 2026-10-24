@@ -1,11 +1,15 @@
 # Como trabalhamos
 
+[English](../docs-en/04-how-we-work.md)
+
 O jogo é feito por três participantes:
 
 - **A filha (6 anos):** dá as ideias, pede as mudanças por voz, desenha, grava
   sons, monta fases e testa o jogo.
 - **O pai:** opera o computador, cuida do Git e ajuda a traduzir as ideias.
 - **O Claude:** escreve e muda os arquivos do jogo.
+
+As conversas com o Claude são em português, a língua da filha.
 
 ## Ciclo de uma sessão
 

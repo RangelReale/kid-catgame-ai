@@ -1,13 +1,26 @@
 # rr-catgame-poc1
 
-Um jogo 2D de plataforma com um gato, feito por pai e filha com a ajuda do
-Claude. O jogo usa o motor Godot 4 e roda em Windows, Android e Mac.
+🇧🇷 [Leia em português](README.pt-br.md)
 
-![O gato arco-íris voa sobre um monstrinho, com o sol e as nuvens no céu](docs/images/screenshot.png)
+A 2D platform game with a cat, made by a father and his daughter with help
+from Claude. The game uses the Godot 4 engine and runs on Windows, Android
+and Mac.
 
-Por enquanto, o gato tem corpo arco-íris, cabeça cor-de-rosa e asas. Ele
-anda, pula e voa por duas fases e pula em cima dos monstrinhos.
-Para rodar, use `godot --path .` na raiz do repositório. Ande com as setas ou
-com A e D, e pule com a barra de espaço. Aperte o pulo de novo no ar para
-voar. Um controle também funciona. Comece pelo [índice dos
-documentos](docs/README.md).
+![The rainbow cat flies over a little monster, with the sun and clouds in the sky](docs-en/images/screenshot.png)
+
+For now, the cat has a rainbow body, a pink head and wings. It walks, jumps
+and flies through two levels and jumps on top of the little monsters.
+To run it, use `godot --path .` at the root of the repository. Walk with the
+arrow keys or with A and D, and jump with the space bar. Press jump again in
+the air to fly. A game controller also works. Start with the [documentation
+index](docs-en/README.md).
+
+## Languages
+
+The documentation exists in English, in [docs-en](docs-en/README.md), and in
+Brazilian Portuguese, in [docs-pt-br](docs-pt-br/README.md). Keep both
+versions in sync.
+
+AI interactions with this repository stay in Brazilian Portuguese, so the
+daughter can keep working on the game. This applies to replies and commit
+messages.

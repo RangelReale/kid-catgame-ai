@@ -1,5 +1,7 @@
 # Documentos do jogo do gato
 
+[English](../docs-en/README.md)
+
 Leia nesta ordem:
 
 1. [Tecnologia](01-tecnologia.md): qual motor de jogo usamos e por quê.

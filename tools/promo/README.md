@@ -1,48 +1,50 @@
-# Vídeo de promoção
+# Promo video
 
-Estes arquivos refazem o vídeo de promoção de 46 segundos,
+[Português](README.pt-br.md)
+
+These files rebuild the 46-second promo video,
 `build/promo/jogo_do_gato_promo.mp4`.
 
-- `autopilot.gd`: joga sozinho. Ele mostra alguns segundos de várias
-  fases, uma depois da outra. A lista `CLIPS` diz qual fase entra, por
-  quanto tempo e onde o gato começa. O gato anda para a direita, pula nos
-  monstrinhos, nada como sereia, voa longe dos passarinhos e anda na
-  roda-gigante e na montanha-russa.
-- `filter.txt`: o filtro do ffmpeg. Ele corta o vídeo em 46,5 segundos, põe
-  os títulos e mistura a música com o som do jogo.
+- `autopilot.gd`: plays by itself. It shows a few seconds of several
+  levels, one after the other. The `CLIPS` list says which level goes in,
+  for how long and where the cat starts. The cat walks right, jumps on the
+  little monsters, swims as a mermaid, flies away from the little birds and
+  rides the Ferris wheel and the roller coaster.
+- `filter.txt`: the ffmpeg filter. It cuts the video at 46.5 seconds, adds
+  the titles and mixes the music with the game sound.
 
-O arquivo `tools/.gdignore` faz o Godot ignorar esta pasta. Assim, o script
-não entra no jogo exportado.
+The `tools/.gdignore` file makes Godot ignore this folder. That way, the
+script does not go into the exported game.
 
-## Requisitos
+## Requirements
 
-- `godot` e `ffmpeg` no `PATH`.
-- A fonte Comic Sans MS Bold. Ela vem no Windows e no Mac.
+- `godot` and `ffmpeg` on the `PATH`.
+- The Comic Sans MS Bold font. It comes with Windows and Mac.
 
-## Passos
+## Steps
 
-Rode a partir da raiz do repositório. No Windows, use `godot_console` no
-lugar de `godot`.
+Run from the root of the repository. On Windows, use `godot_console`
+instead of `godot`.
 
-1. Teste o piloto automático sem gravar. A saída deve mostrar uma linha
-   `clip` para cada trecho, um `POP` para cada monstrinho e um `ride` para
-   cada brinquedo:
+1. Test the autopilot without recording. The output should show a `clip`
+   line for each clip, a `POP` for each little monster and a `ride` for each
+   ride:
 
    ```sh
    godot --headless --path . --fixed-fps 60 -s tools/promo/autopilot.gd
    ```
 
-2. Grave a jogada. O Godot abre uma janela e grava 46,5 segundos:
+2. Record the gameplay. Godot opens a window and records 46.5 seconds:
 
    ```sh
    mkdir -p build/promo
    godot --path . --write-movie build/promo/gameplay.avi --fixed-fps 30 -s tools/promo/autopilot.gd
    ```
 
-   No PowerShell, troque `mkdir -p build/promo` por
+   In PowerShell, replace `mkdir -p build/promo` with
    `New-Item -ItemType Directory -Force build/promo`.
 
-3. Baixe a música e copie a fonte:
+3. Download the music and copy the font:
 
    ```sh
    curl -L -o build/promo/music.wav "https://opengameart.org/sites/default/files/Cat%20Song%201.2.wav"
@@ -51,8 +53,8 @@ lugar de `godot`.
    - Windows: `Copy-Item C:\Windows\Fonts\comicbd.ttf build\promo\font.ttf`
    - Mac: `cp "/System/Library/Fonts/Supplemental/Comic Sans MS Bold.ttf" build/promo/font.ttf`
 
-4. Monte o vídeo a partir de `build/promo`. O filtro procura `font.ttf` na
-   pasta atual:
+4. Build the video from `build/promo`. The filter looks for `font.ttf` in
+   the current folder:
 
    ```sh
    cd build/promo
@@ -60,20 +62,21 @@ lugar de `godot`.
    cd ../..
    ```
 
-## Quando o jogo mudar
+## When the game changes
 
-Os títulos de `filter.txt` aparecem em segundos fixos. Cada título combina
-com um trecho de `CLIPS`: a fase 1 até 9 s, a praia, a sereia, o ratão, o
-céu, o avião, as princesas, o monstro gigante, a roda-gigante, a
-montanha-russa e o fim aos 42,5 s. Se mudar a lista `CLIPS`, rode o passo 1.
-Depois, ajuste os tempos de `enable='between(t,...)'` e os tempos do fim
-para os novos momentos da saída.
+The titles in `filter.txt` appear at fixed seconds. Each title matches a
+clip in `CLIPS`: level 1 until 9 s, the beach, the mermaid, the big rat,
+the sky, the airplane, the princesses, the giant monster, the Ferris wheel,
+the roller coaster and the end at 42.5 s. If you change the `CLIPS` list,
+run step 1. Then adjust the `enable='between(t,...)'` times and the end
+times to the new moments in the output.
 
-## Música
+## Music
 
-"Cat Song", de Dan Knoflicek, está em
-<https://opengameart.org/content/cat-song>. A licença é CC0, então não é
-preciso pedir permissão. O autor pede o crédito, que já aparece no fim do
-vídeo. Ele também pede uma mensagem ou um link quando alguém usa a música.
-A música tem 27 segundos. A opção `-stream_loop 1` toca a música duas
-vezes seguidas, e o filtro abaixa o volume nos últimos 2 segundos.
+"Cat Song", by Dan Knoflicek, is at
+<https://opengameart.org/content/cat-song>. The license is CC0, so there is
+no need to ask permission. The author asks for credit, which already
+appears at the end of the video. He also asks for a message or a link when
+someone uses the music. The song is 27 seconds long. The `-stream_loop 1`
+option plays the music twice in a row, and the filter lowers the volume in
+the last 2 seconds.

@@ -1,5 +1,7 @@
 # A história do jogo do gato
 
+[English](../docs-en/07-history-read-aloud.md)
+
 Esta é a história de tudo o que fizemos no jogo do gato, desde o começo.
 
 ## Primeiro dia

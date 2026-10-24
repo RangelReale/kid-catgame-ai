@@ -1,9 +1,9 @@
 # Jogo do gato
 
 Um jogo 2D de plataforma lateral com um gato, feito por um pai e sua filha de
-6 anos. Os detalhes estão em [docs/](docs/README.md).
+6 anos. Os detalhes estão em [docs-pt-br/](docs-pt-br/README.md) (em inglês, em [docs-en/](docs-en/README.md)).
 
-**Estado atual:** o marco 3 do [roteiro](docs/05-roteiro.md) está pronto. O
+**Estado atual:** o marco 3 do [roteiro](docs-pt-br/05-roteiro.md) está pronto. O
 gato tem corpo arco-íris, patas, rabo e cabeça cor-de-rosa com orelhas, olho
 e boca, e asas. Ele anda e pula, com cambalhota, sobre um chão verde. No
 ar, bate as asas para subir mais, até três vezes antes de pousar. Cada pulo
@@ -62,13 +62,19 @@ erros de transcrição e sem detalhes.
 - Depois de mudar, diga em uma ou duas frases curtas o que mudou e como ver
   isso no jogo. Use palavras que uma criança de 6 anos entende.
 - Se o pedido for grande, faça a primeira parte jogável e diga o que falta.
-- Anote ideias novas em "Ideias da filha", em `docs/05-roteiro.md`.
+- Anote ideias novas em "Ideias da filha", em `docs-pt-br/05-roteiro.md` e
+  em "The daughter's ideas", em `docs-en/05-roadmap.md`.
 - O conteúdo do jogo é para criança: sem violência e sem sustos. O jogador
   não pode precisar ler para jogar.
 
 ## Idioma
 
-- Respostas, documentos e commits: português.
+- Respostas e commits: português, mesmo que o pedido venha em inglês. Assim
+  a filha continua trabalhando no jogo.
+- Documentos: em dois idiomas. Cada documento existe em `docs-pt-br/`, em
+  português, e em `docs-en/`, em inglês, com o link para a outra versão no
+  topo. O `README.md` é em inglês, e o `README.pt-br.md`, em português. Ao
+  mudar um documento, mude as duas versões.
 - Código, nomes de arquivos, nós e ações: inglês.
 
 ## Tecnologia
@@ -102,17 +108,17 @@ Nos comandos com `--headless`, e sempre que a saída importa, use
 Os nomes entre aspas são os nomes das predefinições em `export_presets.cfg`.
 Por enquanto, esse arquivo tem as predefinições "Android", "iOS", "Web" e
 "Windows Desktop". A do Mac nasce no marco 5. A pasta de destino precisa existir antes da exportação. Para
-instalar no Retroid Pocket 3+ ou no iPad, veja [docs/02-ambiente.md](docs/02-ambiente.md).
+instalar no Retroid Pocket 3+ ou no iPad, veja [docs-pt-br/02-ambiente.md](docs-pt-br/02-ambiente.md).
 
 Para publicar uma versão no GitHub, veja "Publicar uma versão" em
-[docs/02-ambiente.md](docs/02-ambiente.md).
+[docs-pt-br/02-ambiente.md](docs-pt-br/02-ambiente.md).
 
 Para confirmar que o jogo abre sem erros, rode-o por alguns quadros e leia a
 saída: `godot --path . --quit-after 120` (no Windows, com `godot_console`).
 
 ## Organização
 
-Resumo de [docs/03-arquitetura.md](docs/03-arquitetura.md):
+Resumo de [docs-pt-br/03-arquitetura.md](docs-pt-br/03-arquitetura.md):
 
 - `scenes/`: cenas (`.tscn`), com o script (`.gd`) ao lado e com o mesmo nome.
 - `assets/`: imagens, sons, músicas e fontes.

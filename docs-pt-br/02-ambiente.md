@@ -1,5 +1,7 @@
 # Ambiente
 
+[English](../docs-en/02-environment.md)
+
 Este documento lista o que instalar para trabalhar no jogo. O Windows é o
 caminho padrão. O Mac é a alternativa.
 
@@ -180,7 +182,7 @@ para gerar o jogo de cada plataforma. Baixe uma vez por computador, em
 Sem o editor, baixe `Godot_v4.7.2-stable_export_templates.tpz` em
 <https://github.com/godotengine/godot-builds/releases>. O arquivo é um `.zip`.
 Copie o conteúdo da pasta `templates/` dele para
-`%APPDATA%\Godot\export_templates.7.2.stable\` (Windows) ou
+`%APPDATA%\Godot\export_templates\4.7.2.stable\` (Windows) ou
 `~/Library/Application Support/Godot/export_templates/4.7.2.stable/` (Mac).
 
 ### Quem exporta o quê
