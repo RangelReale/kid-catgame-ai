@@ -63,7 +63,10 @@ erros de transcrição e sem detalhes.
   isso no jogo. Use palavras que uma criança de 6 anos entende.
 - Se o pedido for grande, faça a primeira parte jogável e diga o que falta.
 - Anote ideias novas em "Ideias da filha", em `docs-pt-br/05-roteiro.md` e
-  em "The daughter's ideas", em `docs-en/05-roadmap.md`.
+  em "The daughter's ideas", em `docs-en/05-roadmap.md`. Ponha também só
+  o pedido, sem data e sem notas de como entrou no jogo, em "Pedidos da
+  filha", no `README.pt-br.md`, e em "The daughter's requests", no
+  `README.md`.
 - O conteúdo do jogo é para criança: sem violência e sem sustos. O jogador
   não pode precisar ler para jogar.
 

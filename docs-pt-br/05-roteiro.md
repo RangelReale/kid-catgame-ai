@@ -28,6 +28,8 @@ A ordem dos marcos 8 e 9 pode mudar conforme o interesse dela.
 ## Ideias da filha
 
 Anote aqui tudo o que ela pedir, com a data. Marque o que já entrou no jogo.
+Copie também o pedido, sem data e sem as notas, para "Pedidos da filha", no
+fim do [README](../README.pt-br.md#pedidos-da-filha).
 
 - [x] 2026-10-15: gato cor-de-rosa (depois virou arco-íris).
 - [x] 2026-10-15: gato com patas e rabo.

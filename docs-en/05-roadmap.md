@@ -31,7 +31,9 @@ The order of milestones 8 and 9 may change depending on her interest.
 ## The daughter's ideas
 
 Write down here everything she asks for, with the date. Mark what is
-already in the game.
+already in the game. Also copy the request, without the date and without
+the notes, to "The daughter's requests", at the end of the
+[README](../README.md#the-daughters-requests).
 
 - [x] 2026-10-15: pink cat (later it became rainbow).
 - [x] 2026-10-15: cat with paws and tail.
