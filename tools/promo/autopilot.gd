@@ -42,6 +42,9 @@ var _popped_seen := {}  # monsters already reported as popped
 func _initialize() -> void:
 	_main = load("res://scenes/main.tscn").instantiate()
 	root.add_child(_main)
+	# Skip the title screen, as if someone pressed a button.
+	# Deferred, because main.tscn is not ready yet.
+	_main.call_deferred("_start_game")
 
 
 func _level() -> Node:
@@ -72,6 +75,8 @@ func _physics_process(_delta: float) -> bool:
 	_tick += 1
 
 	var level := _level()
+	if level == null:  # the first level loads on the next frame
+		return false
 	if level != _last_level:
 		_last_level = level
 		_start_clip(level)
