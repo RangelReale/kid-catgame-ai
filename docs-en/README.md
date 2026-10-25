@@ -15,6 +15,7 @@ Read in this order:
    order.
 7. [History to read aloud](07-history-read-aloud.md): the same story, in
    simple sentences, to read out loud.
+8. [Privacy](08-privacy.md): what the game does with data.
 
 The [CLAUDE.md](../CLAUDE.md) file, at the root, holds the instructions that
 Claude follows in this repository. It is in Portuguese, because AI

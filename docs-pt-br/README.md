@@ -13,6 +13,7 @@ Leia nesta ordem:
 6. [Histórico](06-historico.md): tudo o que já mudou no jogo, em ordem.
 7. [Histórico para ouvir](07-historico-para-ouvir.md): a mesma história, em
    frases simples, para ler em voz alta.
+8. [Privacidade](08-privacidade.md): o que o jogo faz com os dados.
 
 O arquivo [CLAUDE.md](../CLAUDE.md), na raiz, traz as instruções que o Claude
 segue neste repositório.
