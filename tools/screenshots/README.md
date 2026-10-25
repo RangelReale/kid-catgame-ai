@@ -11,6 +11,7 @@ the computer's screen is.
 | Device | Size |
 | --- | --- |
 | 6.9" iPhone | 2868 x 1320 |
+| 6.3" iPhone | 2622 x 1206 |
 | 13" iPad | 2752 x 2064 |
 | Page header (`header.png`) | 3840 x 1646 |
 | Search results (`search.png`) | 3840 x 2560 |
@@ -24,6 +25,10 @@ Run it from the repository root. On Windows, use `godot_console` instead of
 ```sh
 godot --path . --fixed-fps 60 -s tools/screenshots/screenshots.gd
 ```
+
+If the computer's screen turns off during the run, the pictures come out
+black. On a Mac, put `caffeinate -d` before the command to keep the screen
+on.
 
 The pictures go to `build/screenshots/`. The `SHOTS` list says which level
 goes in, where the cat starts and how long it plays before the picture. The

@@ -11,6 +11,7 @@ tela do computador.
 | Aparelho | Tamanho |
 | --- | --- |
 | iPhone de 6,9" | 2868 x 1320 |
+| iPhone de 6,3" | 2622 x 1206 |
 | iPad de 13" | 2752 x 2064 |
 | Cabeçalho da página (`header.png`) | 3840 x 1646 |
 | Resultados da busca (`search.png`) | 3840 x 2560 |
@@ -24,6 +25,9 @@ lugar de `godot`. O Godot abre uma janela por alguns segundos:
 ```sh
 godot --path . --fixed-fps 60 -s tools/screenshots/screenshots.gd
 ```
+
+Se a tela do computador apagar durante a execução, as imagens saem pretas.
+No Mac, ponha `caffeinate -d` antes do comando para a tela não apagar.
 
 As imagens ficam em `build/screenshots/`. A lista `SHOTS` diz qual fase
 entra, onde o gato começa e quanto tempo ele joga antes da foto. A lista

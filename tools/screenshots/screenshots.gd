@@ -14,6 +14,7 @@ const BASE_SIZE := Vector2(480.0, 270.0)
 ## The screen sizes the App Store asks for, in landscape.
 const SIZES: Dictionary = {
 	"iphone_6_9": Vector2i(2868, 1320),
+	"iphone_6_3": Vector2i(2622, 1206),
 	"ipad_13": Vector2i(2752, 2064),
 }
 
