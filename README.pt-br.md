@@ -2,8 +2,9 @@
 
 🇺🇸 [Read in English](README.md)
 
-Um jogo 2D de plataforma com um gato, feito por pai e filha com a ajuda do
-Claude. O jogo usa o motor Godot 4 e roda em Windows, Android e Mac.
+Um jogo 2D de plataforma com um gato, feito por um pai e sua filha de 6
+anos, com a ajuda do Claude. O jogo usa o motor Godot 4 e roda em Windows,
+Android e Mac.
 
 ![O gato arco-íris voa sobre um monstrinho, com o sol e as nuvens no céu](docs-en/images/screenshot.png)
 

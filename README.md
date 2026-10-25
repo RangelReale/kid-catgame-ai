@@ -2,9 +2,9 @@
 
 🇧🇷 [Leia em português](README.pt-br.md)
 
-A 2D platform game with a cat, made by a father and his daughter with help
-from Claude. The game uses the Godot 4 engine and runs on Windows, Android
-and Mac.
+A 2D platform game with a cat, made by a father and his 6-year-old daughter
+with help from Claude. The game uses the Godot 4 engine and runs on
+Windows, Android and Mac.
 
 ![The rainbow cat flies over a little monster, with the sun and clouds in the sky](docs-en/images/screenshot.png)
 
