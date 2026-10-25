@@ -115,3 +115,9 @@ version](07-history-read-aloud.md) and in both Portuguese versions.
 - **Documents in two languages.** The documents now exist in English, in
   `docs-en`, and in Portuguese, in `docs-pt-br`. The README also has both
   versions.
+
+## October 25, 2026
+
+- **Promo video in English.** The video now also exists in English, with
+  the same clips and translated titles. Both videos were recorded again
+  with today's game. The video's autopilot now skips the title screen.

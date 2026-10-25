@@ -38,7 +38,7 @@ assets/
 docs-pt-br/          these documents, in Portuguese
 docs-en/             these documents, in English
 tools/               tools outside the game; Godot ignores the folder
-  promo/             autopilot and ffmpeg filter for the promo video
+  promo/             autopilot and ffmpeg filters for the promo videos
 build/               exported games (outside Git)
 ```
 

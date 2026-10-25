@@ -112,3 +112,10 @@ ouvir](07-historico-para-ouvir.md) e nas duas versões em inglês.
 - **Documentos em dois idiomas.** Os documentos agora existem em inglês, em
   `docs-en`, e em português, em `docs-pt-br`. O README também tem as duas
   versões.
+
+## 25 de outubro de 2026
+
+- **Vídeo de promoção em inglês.** O vídeo agora existe também em inglês,
+  com os mesmos trechos e os títulos traduzidos. Os dois vídeos foram
+  gravados de novo com o jogo de hoje. O piloto automático do vídeo passou
+  a pular a tela de início.

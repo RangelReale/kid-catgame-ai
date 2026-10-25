@@ -38,7 +38,7 @@ assets/
 docs-pt-br/          estes documentos, em português
 docs-en/             os mesmos documentos, em inglês
 tools/               ferramentas fora do jogo; o Godot ignora a pasta
-  promo/             piloto automático e filtro do ffmpeg do vídeo de promoção
+  promo/             piloto automático e filtros do ffmpeg dos vídeos de promoção
 build/               jogos exportados (fora do Git)
 ```
 
