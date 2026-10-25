@@ -37,6 +37,8 @@ var _release_tick := -1
 var _last_level: Node
 var _show_off_done := false
 var _popped_seen := {}  # monsters already reported as popped
+var _snapped_camera: Camera2D  # camera with its smoothing turned off for now
+var _smoothing_on_tick := -1  # tick when that smoothing goes back on
 
 
 func _initialize() -> void:
@@ -80,6 +82,8 @@ func _physics_process(_delta: float) -> bool:
 	if level != _last_level:
 		_last_level = level
 		_start_clip(level)
+	if _tick == _smoothing_on_tick and is_instance_valid(_snapped_camera):
+		_snapped_camera.position_smoothing_enabled = true
 
 	var mode: String = _clip_info().get("mode", "still" if _clip_info().has("ride") else "walk")
 	var player := level.get_node_or_null("Player") as CharacterBody2D
@@ -124,11 +128,11 @@ func _start_clip(level: Node) -> void:
 	var player := level.get_node_or_null("Player") as Node2D
 	if player != null and info.has("x"):
 		player.position.x = info.x
-		player.get_node("Camera2D").reset_smoothing()
+		_snap_camera(player)
 	var plane := level.get_node_or_null("Airplane") as Node2D
 	if plane != null and info.has("plane_x"):
 		plane.position.x = info.plane_x
-		plane.get_node("Camera2D").reset_smoothing()
+		_snap_camera(plane)
 	print("%.2f clip %d: %s" % [_seconds(), _clip, level.name])
 	_clip_start_tick = _tick
 
@@ -143,8 +147,18 @@ func _get_on_ride(level: Node, player: Node2D) -> void:
 				and (seat == ride or child.global_position.x < seat.global_position.x):
 			seat = child
 	player.global_position = seat.global_position + Vector2(0.0, -30.0)
-	player.get_node("Camera2D").reset_smoothing()
+	_snap_camera(player)
 	print("%.2f ride %s" % [_seconds(), seat.name])
+
+
+## After a jump to another spot, the camera's smoothing would glide there in
+## a fast scroll, even after reset_smoothing(). So it stays off for a few
+## ticks and the camera jumps straight to the new spot.
+func _snap_camera(body: Node2D) -> void:
+	body.reset_physics_interpolation()
+	_snapped_camera = body.get_node("Camera2D")
+	_snapped_camera.position_smoothing_enabled = false
+	_smoothing_on_tick = _tick + 5
 
 
 ## Mermaid: swims up and down in waves.

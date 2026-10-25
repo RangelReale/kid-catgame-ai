@@ -118,4 +118,5 @@ ouvir](07-historico-para-ouvir.md) e nas duas versões em inglês.
 - **Vídeo de promoção em inglês.** O vídeo agora existe também em inglês,
   com os mesmos trechos e os títulos traduzidos. Os dois vídeos foram
   gravados de novo com o jogo de hoje. O piloto automático do vídeo passou
-  a pular a tela de início.
+  a pular a tela de início. Quando um trecho começa, a câmera agora pula
+  direto para o gato, sem rolar rápido pela fase.

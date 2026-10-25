@@ -121,3 +121,5 @@ version](07-history-read-aloud.md) and in both Portuguese versions.
 - **Promo video in English.** The video now also exists in English, with
   the same clips and translated titles. Both videos were recorded again
   with today's game. The video's autopilot now skips the title screen.
+  When a clip starts, the camera now jumps straight to the cat, without a
+  fast scroll across the level.
