@@ -30,6 +30,13 @@ const SHOTS: Array[Dictionary] = [
 	{"name": "06_ferris_wheel", "level": 15, "seconds": 2.5, "ride": "FerrisWheel/Cabins"},
 ]
 
+## The pictures for the top of the store page and for the search results.
+## They have no words, so they serve both languages.
+const STORE_ART: Array[Dictionary] = [
+	{"name": "header", "size": Vector2i(3840, 1646), "level": 15, "x": 330.0, "seconds": 1.6},
+	{"name": "search", "size": Vector2i(3840, 2560), "level": 15, "x": 330.0, "seconds": 1.6},
+]
+
 ## The languages of the title picture. The levels have no words, so they are
 ## taken once.
 const LOCALES: Array[String] = ["pt_BR", "en"]
@@ -53,9 +60,14 @@ func _initialize() -> void:
 			var locales: Array[String] = LOCALES if shot.level == -1 else ([""] as Array[String])
 			for locale in locales:
 				var job := shot.duplicate()
-				job.size_name = size_name
+				job.size = SIZES[size_name]
+				job.name = size_name + "_" + job.name
 				job.locale = locale
 				_jobs.append(job)
+	for art in STORE_ART:
+		var job := art.duplicate()
+		job.locale = ""
+		_jobs.append(job)
 
 
 func _process(_delta: float) -> bool:
@@ -80,7 +92,7 @@ func _start(job: Dictionary) -> void:
 		Input.action_release(action)
 	if job.locale != "":
 		TranslationServer.set_locale(job.locale)
-	var size: Vector2i = SIZES[job.size_name]
+	var size: Vector2i = job.size
 	_viewport = SubViewport.new()
 	_viewport.size = size
 	_viewport.size_2d_override = _base_size_for(size)
@@ -177,6 +189,9 @@ func _save() -> void:
 	var file_name: String = job.name
 	if job.locale != "":
 		file_name += "_" + job.locale
-	var path := "%s/%s_%s.png" % [OUTPUT_DIR, job.size_name, file_name]
-	_viewport.get_texture().get_image().save_png(path)
+	var path := "%s/%s.png" % [OUTPUT_DIR, file_name]
+	# The App Store refuses pictures with a see-through channel.
+	var image := _viewport.get_texture().get_image()
+	image.convert(Image.FORMAT_RGB8)
+	image.save_png(path)
 	print("saved ", path)
