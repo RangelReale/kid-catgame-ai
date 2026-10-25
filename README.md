@@ -10,12 +10,30 @@ Windows, Android and Mac.
 
 For now, the cat has a rainbow body, a pink head and wings. It walks, jumps
 and flies through two levels and jumps on top of the little monsters.
-To run it, use `godot --path .` at the root of the repository. Walk with the
-arrow keys or with A and D, and jump with the space bar. Press jump again in
-the air to fly. A game controller also works. Start with the [documentation
+To run it, use `godot --path .` at the root of the repository. The keys are
+in [Controls](#controls). Start with the [documentation
 index](docs-en/README.md).
 
 Play it in the browser at <https://rangelreale.github.io/kid-catgame-ai/>.
+
+## Controls
+
+| Action | Keyboard | Game controller |
+| --- | --- | --- |
+| Walk | Left and right arrows, or A and D | D-pad or left stick |
+| Jump | Space bar or up arrow | Bottom button (A) |
+| Fly | Jump again in the air, up to three times | Bottom button (A) |
+| Swim up, in the sea | Jump | Bottom button (A) |
+| Swim down, in the sea | Down arrow or S | D-pad down or left stick down |
+| Start the game, on the title screen | Any key | Any button |
+| Change the language, on the title screen | L | Back (Select) |
+| Go to levels 1 to 10 | 1 to 9 and 0, also on the numeric keypad | |
+| Go to levels 11 to 20 | Ctrl with 1 to 9 and 0 | |
+| Next level | `+`, `=` or Page Down | |
+| Previous level | `-` or Page Up | |
+
+On touch screens without a game controller, four round buttons in the
+bottom corners walk and jump.
 
 ## Languages
 
