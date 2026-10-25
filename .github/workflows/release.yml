@@ -96,5 +96,5 @@ jobs:
         run: |
           gh release create "v$VERSION" build/release/* \
             --target "$GITHUB_SHA" \
-            --title "Jogo do gato $VERSION" \
+            --title "Cat game (Jogo do gato) $VERSION" \
             --generate-notes
