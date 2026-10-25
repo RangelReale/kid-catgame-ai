@@ -27,10 +27,6 @@ Play it in the browser at <https://rangelreale.github.io/kid-catgame-ai/>.
 | Swim down, in the sea | Down arrow or S | D-pad down or left stick down |
 | Start the game, on the title screen | Any key | Any button |
 | Change the language, on the title screen | L | Back (Select) |
-| Go to levels 1 to 10 | 1 to 9 and 0, also on the numeric keypad | |
-| Go to levels 11 to 20 | Ctrl with 1 to 9 and 0 | |
-| Next level | `+`, `=` or Page Down | |
-| Previous level | `-` or Page Up | |
 
 On touch screens without a game controller, four round buttons in the
 bottom corners walk and jump.

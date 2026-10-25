@@ -27,10 +27,6 @@ Jogue no navegador em <https://rangelreale.github.io/kid-catgame-ai/>.
 | Descer nadando, no mar | Seta para baixo ou S | Direcional para baixo ou alavanca esquerda para baixo |
 | Começar o jogo, na tela de início | Qualquer tecla | Qualquer botão |
 | Trocar o idioma, na tela de início | L | Voltar (Select) |
-| Ir para as fases de 1 a 10 | 1 a 9 e 0, também no teclado numérico | |
-| Ir para as fases de 11 a 20 | Ctrl com 1 a 9 e 0 | |
-| Próxima fase | `+`, `=` ou Page Down | |
-| Fase anterior | `-` ou Page Up | |
 
 Em telas de toque sem controle, quatro botões redondos nos cantos de baixo
 fazem o gato andar e pular.
