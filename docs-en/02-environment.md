@@ -237,6 +237,14 @@ landscape; the script is in `html/head_include`, in the "Web" preset. The
 iPhone does not let pages go full screen. In the browser, Ctrl with a number
 switches tabs, so the shortcuts for levels 11 to 20 do not work.
 
+### Web version on GitHub Pages
+
+The `Pages` workflow (`.github/workflows/pages.yml`) exports the web version
+and publishes it at <https://rangelreale.github.io/kid-catgame-ai/>. It runs
+on every push to `master`, except when only documents change. To run it by
+hand: `gh workflow run pages.yml`. GitHub Pages works because the
+repository is public.
+
 ### Testing on an Android phone
 
 1. On the phone, enable **Developer options** and **USB debugging**.

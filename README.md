@@ -15,6 +15,8 @@ arrow keys or with A and D, and jump with the space bar. Press jump again in
 the air to fly. A game controller also works. Start with the [documentation
 index](docs-en/README.md).
 
+Play it in the browser at <https://rangelreale.github.io/kid-catgame-ai/>.
+
 ## Languages
 
 The documentation exists in English, in [docs-en](docs-en/README.md), and in

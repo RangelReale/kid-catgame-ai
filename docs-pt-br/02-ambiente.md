@@ -236,6 +236,14 @@ deitado; o script fica em `html/head_include`, na predefinição "Web". O
 iPhone não deixa páginas entrarem em tela cheia. No navegador, Ctrl com um número troca de aba, então os atalhos das
 fases 11 a 20 não funcionam.
 
+### Versão web no GitHub Pages
+
+O workflow `Pages` (`.github/workflows/pages.yml`) exporta a versão web e a
+publica em <https://rangelreale.github.io/kid-catgame-ai/>. Ele roda a cada
+push em `master`, menos quando só os documentos mudam. Para rodar à mão:
+`gh workflow run pages.yml`. O GitHub Pages funciona porque o repositório é
+público.
+
 ### Testar no celular Android
 
 1. No celular, ative as **Opções do desenvolvedor** e a **Depuração USB**.

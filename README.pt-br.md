@@ -15,6 +15,8 @@ com A e D, e pule com a barra de espaço. Aperte o pulo de novo no ar para
 voar. Um controle também funciona. Comece pelo [índice dos
 documentos](docs-pt-br/README.md).
 
+Jogue no navegador em <https://rangelreale.github.io/kid-catgame-ai/>.
+
 ## Idiomas
 
 Os documentos existem em português, em [docs-pt-br](docs-pt-br/README.md), e
