@@ -172,6 +172,30 @@ xcrun devicectl device process launch --device <UDID> com.rangelreale.catgame
 The iPad must be unlocked for the game to open. The preset only generates
 the Xcode project (`export_project_only`); `xcodebuild` compiles and signs.
 
+### 4. Uploading to the App Store
+
+Before each upload, raise `application/version` in the "iOS" preset of
+`export_presets.cfg`. The App Store refuses two uploads with the same number.
+For a new version of the game, also change `application/short_version`.
+
+```sh
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+rm -rf build/ios && mkdir -p build/ios
+godot --headless --path . --export-release "iOS" build/ios/catgame.xcodeproj
+xcodebuild -project build/ios/catgame.xcodeproj -scheme catgame \
+  -configuration Release -destination 'generic/platform=iOS' \
+  -archivePath build/ios/catgame.xcarchive -allowProvisioningUpdates \
+  CODE_SIGN_IDENTITY="Apple Development" archive
+xcodebuild -exportArchive -archivePath build/ios/catgame.xcarchive \
+  -exportOptionsPlist tools/app_store/ExportOptions.plist \
+  -exportPath build/ios/export -allowProvisioningUpdates
+```
+
+`archive` signs for development, and `-exportArchive` signs again for the
+store and uploads. After about 15 minutes, the upload shows up in App Store
+Connect, in the version's "Build" section. Godot already declares in
+`Info.plist` that the game uses no encryption (`ITSAppUsesNonExemptEncryption`).
+
 ## Common to both systems
 
 ### Export templates
