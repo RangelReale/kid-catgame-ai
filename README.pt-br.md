@@ -1,4 +1,4 @@
-# rr-catgame-poc1
+# kid-catgame-ai
 
 🇺🇸 [Read in English](README.md)
 
