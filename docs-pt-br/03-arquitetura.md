@@ -131,8 +131,10 @@ que 16:9, o jogador vê um pouco mais da fase nas laterais.
 No computador, a janela abre com 1280x720 pontos. O fundo é azul-claro, a cor
 do céu.
 
-Enquanto o jogo carrega, aparece o gato do ícone sobre o céu, no lugar do logo
-do Godot. Isso fica em `application/boot_splash` no `project.godot`. No Android
+Enquanto o jogo carrega, aparece o gato sobre o céu, no lugar do logo do Godot.
+Isso fica em `application/boot_splash` no `project.godot`. A imagem é
+`assets/icons/splash.png`, gerada a partir da cena do gato por
+`tools/splash/make_splash.gd`. No Android
 12 ou mais novo, o próprio sistema mostra o ícone do jogo antes dessa tela.
 
 No Android, o jogo roda sempre deitado (paisagem).

@@ -132,8 +132,10 @@ wider than 16:9, the player sees a bit more of the level at the sides.
 On the computer, the window opens at 1280x720 points. The background is
 light blue, the color of the sky.
 
-While the game loads, the cat from the icon appears on the sky, in place of
-the Godot logo. This is set in `application/boot_splash` in `project.godot`. On
+While the game loads, the cat appears on the sky, in place of the Godot logo.
+This is set in `application/boot_splash` in `project.godot`. The picture is
+`assets/icons/splash.png`, made from the cat scene by
+`tools/splash/make_splash.gd`. On
 Android 12 or newer, the system itself shows the game icon before this screen.
 
 On Android, the game always runs lying down (landscape).

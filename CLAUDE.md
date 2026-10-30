@@ -37,7 +37,8 @@ encostar num peixinho faz ele pular da água. As teclas de 1 a 9 e o 0 pulam dir
 para as fases de 1 a 10; com Ctrl, para as fases de 11 a 20. As teclas + e -
 vão para a próxima fase e para a anterior. Uma bandeira no fim de
 cada uma leva à próxima (marco 8 pronto). Enquanto carrega, o jogo mostra o
-gato do ícone sobre o céu, no lugar do logo do Godot. O jogo abre numa tela de início
+gato sobre o céu (`assets/icons/splash.png`, gerada por
+`tools/splash/make_splash.gd`), no lugar do logo do Godot. O jogo abre numa tela de início
 com "Jogo do gato" em letras grandes e algumas fases rodando sozinhas no
 fundo, em tom sépia. Toca uma musiquinha de bipes, como nos PCs antigos
 (`assets/music/title.wav`, gerada por `tools/music/make_title_music.py`), e
