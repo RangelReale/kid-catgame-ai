@@ -39,6 +39,13 @@ em inglês, em [docs-en](docs-en/README.md). Mantenha as duas versões iguais.
 As conversas com a IA neste repositório continuam em português, para a filha
 continuar trabalhando no jogo. Isso vale para as respostas e os commits.
 
+## Como tudo começou
+
+Foi assim que o jogo começou. Esta é a tela gerada pelo primeiro prompt: o
+gato era só uma cabeça laranja com orelhas, sobre um chão verde.
+
+![A primeira tela do jogo: uma cabeça de gato laranja com orelhas sobre um chão verde, com o céu azul](docs-en/images/first-screen.png)
+
 ## Pedidos da filha
 
 Antes de a filha começar a pedir, o pai montou a base: os documentos, o

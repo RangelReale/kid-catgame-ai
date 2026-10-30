@@ -41,6 +41,13 @@ AI interactions with this repository stay in Brazilian Portuguese, so the
 daughter can keep working on the game. This applies to replies and commit
 messages.
 
+## How it all started
+
+This is how the game started. This screen came from the first prompt: the cat
+was only an orange head with ears, on green ground.
+
+![The first screen of the game: an orange cat head with ears on green ground, under a blue sky](docs-en/images/first-screen.png)
+
 ## The daughter's requests
 
 Before the daughter started asking, the father built the base: the
