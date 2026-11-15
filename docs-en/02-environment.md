@@ -269,6 +269,11 @@ on every push to `master`, except when only documents change. To run it by
 hand: `gh workflow run pages.yml`. GitHub Pages works because the
 repository is public.
 
+The page counts visits with Cloudflare Web Analytics, which uses no cookies.
+The script is in `html/head_include`, in the "Web" preset of
+`export_presets.cfg`. Visits show up in the Cloudflare dashboard, under
+**Analytics & Logs → Web Analytics**, for the site `rangelreale.github.io`.
+
 ### Testing on an Android phone
 
 1. On the phone, enable **Developer options** and **USB debugging**.
